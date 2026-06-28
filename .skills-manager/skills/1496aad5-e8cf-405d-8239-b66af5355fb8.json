@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "1496aad5-e8cf-405d-8239-b66af5355fb8",
+  "path": "understand-knowledge",
+  "path_key": "understand-knowledge",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/个人开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

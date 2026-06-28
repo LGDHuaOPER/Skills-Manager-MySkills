@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "429e9d22-c24a-41f4-b422-fd638cccff0c",
+  "name": "Git",
+  "description": null,
+  "icon": "code-2",
+  "sort_order": 999
+}

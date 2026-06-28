@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "530a80f3-be13-48ad-bbe2-c1e7d589e616",
+  "path": "understand-chat",
+  "path_key": "understand-chat",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/个人开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "b29eb0a5-ab85-4003-91e9-03b427ddc735",
+  "path": "frontend-slides",
+  "path_key": "frontend-slides",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PPT"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "zarazhangrui/frontend-slides/frontend-slides",
+    "subpath": "plugins\\frontend-slides\\skills\\frontend-slides",
+    "branch": null
+  }
+}

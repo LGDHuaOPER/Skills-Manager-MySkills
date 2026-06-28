@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "85d9ce5e-a2f1-4485-b4ae-488d537dee68",
+  "path": "avoid-ai-writing",
+  "path_key": "avoid-ai-writing",
+  "enabled": true,
+  "tags": [
+    "Humanizer",
+    "Humanizer/en"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "conorbronsdon/avoid-ai-writing/avoid-ai-writing",
+    "subpath": "plugins\\avoid-ai-writing\\skills\\avoid-ai-writing",
+    "branch": null
+  }
+}

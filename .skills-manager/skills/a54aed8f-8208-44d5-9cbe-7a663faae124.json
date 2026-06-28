@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "a54aed8f-8208-44d5-9cbe-7a663faae124",
+  "path": "understand-diff",
+  "path_key": "understand-diff",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/个人开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

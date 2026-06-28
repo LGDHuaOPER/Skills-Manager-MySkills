@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "c59f3c42-2bf4-488d-a9ed-8d1733f01540",
+  "path": "understand-dashboard",
+  "path_key": "understand-dashboard",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/个人开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

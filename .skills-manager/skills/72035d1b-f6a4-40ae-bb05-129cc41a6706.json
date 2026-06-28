@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "72035d1b-f6a4-40ae-bb05-129cc41a6706",
+  "path": "stop-slop",
+  "path_key": "stop-slop",
+  "enabled": true,
+  "tags": [
+    "Humanizer",
+    "Humanizer/en"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "hardikpandya/stop-slop/stop-slop",
+    "subpath": null,
+    "branch": null
+  }
+}

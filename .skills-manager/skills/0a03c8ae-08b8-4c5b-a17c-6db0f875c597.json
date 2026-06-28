@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "0a03c8ae-08b8-4c5b-a17c-6db0f875c597",
+  "path": "understand-domain",
+  "path_key": "understand-domain",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/个人开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

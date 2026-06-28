@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "4ee2c367-d9e9-4d0a-a196-450be4f63b95",
+  "path": "shuorenhua",
+  "path_key": "shuorenhua",
+  "enabled": true,
+  "tags": [
+    "Humanizer",
+    "Humanizer/zh"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "mrgediao/shuorenhua/shuorenhua",
+    "subpath": null,
+    "branch": null
+  }
+}

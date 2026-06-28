@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "ee5731cc-0610-4822-8d22-27f35ede8f26",
+  "path": "codebase-memory",
+  "path_key": "codebase-memory",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

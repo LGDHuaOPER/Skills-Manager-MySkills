@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "e1de9a45-5777-487c-9120-42d4ed867da6",
+  "path": "understand-onboard",
+  "path_key": "understand-onboard",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/个人开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

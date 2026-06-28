@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "0db6113f-e552-4d8a-b4f7-fdb24b62f61b",
+  "name": "Humanizer",
+  "description": "从事前预防，到分层改写，到审计修复，全方位人性化文字",
+  "icon": "notebook-pen",
+  "sort_order": 1
+}

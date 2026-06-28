@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "skill_id": "a5c84779-5ab2-47c6-abc9-27493dce0336",
+  "path": "skill-judge",
+  "path_key": "skill-judge",
+  "enabled": true,
+  "tags": [
+    "Getting-Started"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "softaworks/agent-toolkit/skill-judge",
+    "subpath": "skills\\skill-judge",
+    "branch": null
+  }
+}
