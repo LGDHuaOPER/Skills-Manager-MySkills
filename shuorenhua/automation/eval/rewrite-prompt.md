@@ -31,9 +31,9 @@
 输入会指定一个 benchmark 区间，例如：
 - SF-01 到 SF-14
 - SF-15 到 SF-28
-- SF-29 到 SF-41
+- SF-29 到 SF-42
 - SNF-01 到 SNF-16
-- SNF-17 到 SNF-31
+- SNF-17 到 SNF-33
 
 每条 benchmark 的字段以 ./evals/benchmark.md 为准：
 - 标题行：编号 / 场景 / 说明

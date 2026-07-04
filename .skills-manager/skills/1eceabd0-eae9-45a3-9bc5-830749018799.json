@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "1eceabd0-eae9-45a3-9bc5-830749018799",
+  "path": "obsidian-canvas-creator",
+  "path_key": "obsidian-canvas-creator",
+  "enabled": true,
+  "tags": [
+    "Editor",
+    "Editor/Obsidian",
+    "Editor/Obsidian/必装"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "axtonliu/axton-obsidian-visual-skills/obsidian-canvas-creator",
+    "subpath": "obsidian-canvas-creator",
+    "branch": null
+  }
+}

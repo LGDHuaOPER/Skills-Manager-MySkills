@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "e29dd522-734b-4a55-bbb9-0bb52b91e873",
+  "path": "obsidian-bases",
+  "path_key": "obsidian-bases",
+  "enabled": true,
+  "tags": [
+    "Editor",
+    "Editor/Obsidian",
+    "Editor/Obsidian/必装"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "kepano/obsidian-skills/obsidian-bases",
+    "subpath": "skills\\obsidian-bases",
+    "branch": null
+  }
+}

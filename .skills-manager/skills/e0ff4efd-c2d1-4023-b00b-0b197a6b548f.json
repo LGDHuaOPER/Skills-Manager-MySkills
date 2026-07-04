@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "e0ff4efd-c2d1-4023-b00b-0b197a6b548f",
+  "path": "obsidian-vault",
+  "path_key": "obsidian-vault",
+  "enabled": true,
+  "tags": [
+    "Editor",
+    "Editor/Obsidian"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "mattpocock/skills/obsidian-vault",
+    "subpath": "skills\\personal\\obsidian-vault",
+    "branch": null
+  }
+}

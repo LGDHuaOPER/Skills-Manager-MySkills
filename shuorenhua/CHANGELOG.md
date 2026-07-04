@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.9.1] - 2026-07-01 — Feedback Intake / 门面勘误与 targeted 回归
+
+### Added
+- evals/benchmark.md 新增 SF-42：回应 #5 首条反馈，钉住 README / 自我宣传文本里的“做快、做稳”残味。
+- evals/benchmark.md 新增 SNF-33：保护有指标支撑的“稳定”状态同步，避免把“稳”一刀切当坏词。
+- 新增 evals/results-v1.9.1.md，归档本版 targeted 单模型回归；明确不替代 v1.9.0 的全量双模型实跑基线。
+
+### Changed
+- README 首页示例去掉“把活做快、做稳”，改成直接说明本项目清理哪些中文 AI 残味。
+- references/phrases-zh.md 补一条带护栏的“做快、做稳 / 又快又稳 / 更快更稳”规则，并给既有“更稳 / 最稳 / 不稳”条目补误杀边界：只处理自我宣传、项目介绍、营销式 README；有真实主体、指标或稳定性结果时放行。
+- benchmark 计数同步为 75 条（42 SF + 33 SNF），README.md、evals/run-eval.md、evals/real-samples.md 与 eval harness 批次说明同步更新。
+
+### Tested
+- Claude targeted rewrite 覆盖 v1.9.0 的 8 个边界用例 + 新增 SF-42 / SNF-33；Codex 按 evals/run-eval.md 口径人工判读。
+- SF-42 通过：README 自我宣传残味被去掉，且没有换成“更可靠 / 更高效 / 价值闭环”等同族空话。
+- SNF-33 通过：“稳定”挂在具体指标上被放行，没有误杀。
+- 复查 v1.9.0 留下的 8 个边界用例，确认本版新增规则不借机扩大为长文、无源引用或 mixed 场景大修。
+
+### Notes
+- 本版不做 v2.0 的 Claude Code plugin、目录分发、README 英文段或第三方 demo 背书。
+- 本版只做 targeted 单模型回归 + 人工判读，不替代 v1.9.0 的双模型实跑结果。
+
 ## [1.9.0] - 2026-06-18 — Eval Harness / 模型实跑评测
 
 ### Added

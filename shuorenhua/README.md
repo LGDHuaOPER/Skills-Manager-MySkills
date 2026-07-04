@@ -20,7 +20,7 @@
 <p align="center">
   <a href="https://github.com/MrGeDiao/shuorenhua/stargazers"><img src="https://img.shields.io/github/stars/MrGeDiao/shuorenhua?style=for-the-badge&amp;label=stars" alt="GitHub stars"></a>
   <a href="https://github.com/MrGeDiao/shuorenhua/releases"><img src="https://img.shields.io/github/v/release/MrGeDiao/shuorenhua?style=for-the-badge&amp;label=release" alt="GitHub release"></a>
-  <a href="evals/benchmark.md"><img src="https://img.shields.io/badge/benchmark-73%20cases-2563eb?style=for-the-badge" alt="Benchmark: 73 cases"></a>
+  <a href="evals/benchmark.md"><img src="https://img.shields.io/badge/benchmark-75%20cases-2563eb?style=for-the-badge" alt="Benchmark: 75 cases"></a>
   <a href="evals/real-samples.md"><img src="https://img.shields.io/badge/real%20samples-19-16a34a?style=for-the-badge" alt="Real samples: 19"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/MrGeDiao/shuorenhua?style=for-the-badge" alt="License"></a>
 </p>
@@ -46,33 +46,41 @@
 | 论坛帖 / issue 回复 | 像维护者在认真沟通，不像客服公告或营销稿 |
 | 中文长文 | 句内清理保住节奏，整句空话列「建议删除」清单交你确认，不让长文越改越短 |
 
-英文去 AI 味已经有 [stop-slop](https://github.com/hardikpandya/stop-slop) 和 [humanizer](https://github.com/blader/humanizer)。`说人话` 补的是中文这一层：互联网黑话、工程师腔、小红书 AI 腔、翻译腔、语域混搭、场景分档和事实保真。
+英文去 AI 味已经有 [stop-slop](https://github.com/hardikpandya/stop-slop) 和 [humanizer](https://github.com/blader/humanizer)。`说人话` 补的是中文这一层：这些腔调在中文里长什么样、按发布场景分档处理、改写前先锁住事实。
 
 ## 改成什么样
 
-### 接住体，先颁奖再共情
+### 聊天答疑，先颁奖再推销
 
 **改写前**
 
-> 你不是敏感，你只是太久没被稳稳接住了。你问到了问题的核心。这次我懂了，我真的懂了。我必须很认真地说一句：你这种观察力和表达方式，绝对是顶刊作者的素养。
+> 你说的很对，这个问题一针见血。一句话总结：核心逻辑是先把流程跑通，再谈优化。我可以直接给你一版绝对没问题的最终方案，已经测试通过了，稳得很。要不要我顺手把文档也整理了？你一句话的事。
 
 **改写后**
 
-> 我在听。你要是愿意，可以继续说。
+> 对，问题就在这：先把流程跑通，再谈优化。方案我发你。文档要不要一起弄？
 
-问题不在某个单词，而在整套姿态链：先替对方做心理判断，再表演共情，最后给对方颁奖。完整样本见 [evals/real-samples.md](evals/real-samples.md) RS-13。
+开头发奖状、结尾追着卖，中间「一句话总结」「核心逻辑」轮着上——这条姿态链社区早就逐个点过名（[Linux.do 句式征集帖](https://linux.do/t/topic/1898176)、[「对象说我说话一股子AI味」](https://linux.do/t/topic/1765637)）。文本为合成示例，把被点名最多的口癖压进了一段。
 
-### 工程师腔溢出到生活
+### 发版感言，不见变更
 
 **改写前**
 
-> 先说结论：吃日料。我把你最近三周的外卖记录过了一遍，已经把差异收窄到两个选项，根因基本坐实是你上周说过腻了火锅。要不要我顺手帮你把 X 店的外卖也下了？你一回复我就上手。
+> ## v1.8.0 Release Highlights
+>
+> 本次版本是一次面向真实场景的系统性升级。我们不仅全面优化了改写体验，更通过全新的能力矩阵稳稳兜住了用户在 README、release note、论坛长帖和 issue 回复里的核心表达诉求。感谢所有用户的持续支持，让我们共同见证中文 AI 写作体验的全新跃迁。
 
 **改写后**
 
-> 吃日料吧，上周你说火锅腻了。要帮你下单吗？
+> ## v1.8.0
+>
+> - 新增 `references/scene-packs.md`，覆盖 README、release note、forum post 和 issue reply
+> - `evals/benchmark.md` 增加 8 条 scene pack 回归用例
+> - `evals/real-samples.md` 增加 4 条整段样本，继续按自然 / 保真 / 可直接发评分
+>
+> 这版不做 Voice Calibration；相关方向推迟到 v1.9 评估。
 
-这类文本的问题是把 debug 口吻带进生活对话。信息可以保留，工程报告感不需要保留。
+release note 的读者要的是变更清单，不是发布宣言。版本号保住，姿态层拆掉，没做的事也写出来。完整样本见 [evals/real-samples.md](evals/real-samples.md) RS-16。
 
 ### 公开介绍的宏大开场
 
@@ -82,18 +90,13 @@
 
 **改写后**
 
-> AI 工具很多，真正能帮开发者把活做快、做稳的并不多。这个项目做的，就是把模型写出来的套话和表演感压下去，让结果更像人写的。
+> AI 工具很多，但改完的中文常常还留着套话。这个项目专门清这些残味：过度承接、工程师腔、翻译腔、无源权威和自我拔高。
 
 更多例子见 [references/examples.md](references/examples.md) 和 [evals/real-samples.md](evals/real-samples.md)。
 
 ## 30 秒上手
 
-**Codex** — clone 后单次使用：
-
-```bash
-git clone https://github.com/MrGeDiao/shuorenhua.git && cd shuorenhua
-codex exec -C . "读取 ./SKILL.md，按其中规则改写以下文本：……"
-```
+**先试效果，什么都不用装** — [说人话 GPT](https://chatgpt.com/g/g-69d5d86a32608191b523efd7a4048736-shuo-ren-hua)（ChatGPT，需 Plus / Pro），完整规则已内置，贴文本就能改。
 
 **Claude Code** — 放进 skills 目录，之后自动触发：
 
@@ -105,7 +108,14 @@ cp -r shuorenhua ~/.claude/skills/shuorenhua
 
 装好后在对话里说「把这段去 AI 味」就会命中。想跟随仓库更新，用软链接代替 cp，见 [install/claude-code.md](install/claude-code.md)。
 
-**ChatGPT** — 什么都不用装：[说人话 GPT](https://chatgpt.com/g/g-69d5d86a32608191b523efd7a4048736-shuo-ren-hua)（需 Plus / Pro），完整规则已内置。
+**Codex** — clone 后单次使用：
+
+```bash
+git clone https://github.com/MrGeDiao/shuorenhua.git && cd shuorenhua
+codex exec -C . "读取 ./SKILL.md，按其中规则改写以下文本：……"
+```
+
+项目内长期使用建议把 skill 文件拷进项目并在 `AGENTS.md` 写明触发条件，见 [install/codex.md](install/codex.md)。
 
 **只想先看问题、不要改稿**：指令里加一句「按 annotation mode 只标注不改写」。
 
@@ -120,7 +130,7 @@ Cursor、OpenClaw 和自建 agent 见[安装](#安装)。
 完整流程固定六步：
 
 1. 判场景：`chat / status / docs / public-writing`；命中 README、release note、论坛帖、issue 回复时，再进对应的 Scene Pack
-2. 划保护片段：数字、版本、命令、路径、报错、引用原文先锁住
+2. 划保护片段：数字、版本、命令、路径、报错、引用原文、人名和责任归属先锁住（完整清单见 [references/protected-spans.md](references/protected-spans.md)）
 3. 按命中强度定力度（`minimal / standard / aggressive`），按能删到什么程度定 scope（`structural / bounded / in-place`）
 4. 先按模式改，词表只兜底
 5. 保真回读：事实、术语、语域、保护片段逐项过
@@ -139,14 +149,7 @@ Cursor、OpenClaw 和自建 agent 见[安装](#安装)。
 
 ### 按发布目的细分（Scene Packs）
 
-可发布文本再按「发到哪里」细分，不是换语气，是按发布目的决定改法：
-
-| 子场景 | 目标 | 容易修掉的问题 |
-|--------|------|----------------|
-| README | 第一屏说清“这是什么、给谁用、解决什么问题” | 标语堆叠、价值宣言、功能列表没重点 |
-| release note | 列清变更、验证、限制和迁移影响 | 发版感言、过度庆祝、没说清测试 |
-| forum post | 像维护者分享真实观察和取舍 | 公司公告腔、营销腔、空泛号召 |
-| issue reply | 先确认问题、影响范围和下一步 | 客服式安抚、过度承诺、绕开复现条件 |
+可发布文本再按「发到哪里」细分，不是换语气，是按发布目的决定改法：README 第一屏要说清这是什么、给谁用；release note 要列清变更、验证和限制；论坛帖像维护者分享观察和取舍，不像公司公告；issue 回复先确认问题和下一步，不做客服式安抚。每个子场景的目标和常见病灶见 [references/scene-packs.md](references/scene-packs.md)。
 
 ### 长文不缩水：三档 scope
 
@@ -158,25 +161,7 @@ Cursor、OpenClaw 和自建 agent 见[安装](#安装)。
 | `bounded`（长文默认） | 整句空话列成「建议删除（待确认）」清单，删多少你拍板 | `public-writing` 长文 |
 | `in-place` | 一句都不删，只句内降调 | 明确要求「完全原样」 |
 
-<details>
-<summary>为什么是这三档：issue #4 的实测过程</summary>
-
-长文按默认 structural 动作改写时，删句、并句、重排段落容易叠加，一篇 1800 字的稿子可能被压到 1000 字（见 [#4](https://github.com/MrGeDiao/shuorenhua/issues/4)）。但反过来只做句内改写（`in-place`），整句级的空话（无源引用、价值拔高收尾）又删不掉、去味偏弱——v1.8.6 用真实模型实跑验证了这一点：两个模型在 `in-place` 下都把无源引用和拔高收尾整句留了下来。
-
-`bounded` 的取舍：句内洗实句直接改、承担节奏的重复不动；整句都是空话的（剥掉引导词就什么都不剩）进「建议删除（待确认）」清单，删多少由用户拍板。这样既不像 `structural` 那样不可控地缩水，也不像 `in-place` 那样把整句空话留在文里。
-
-</details>
-
-### 哪些内容永远优先保护
-
-这些内容默认优先保护：
-
-| 类型 | 例子 |
-|------|------|
-| 数字和版本 | 日期、区间、单位、指标、版本号 |
-| 代码上下文 | 命令、路径、参数、字段、配置项 |
-| 事实归属 | 人名、组织名、责任主体、时间线 |
-| 引用和证据 | 引号内原文、报错、状态码、实验结果 |
+三档的取舍过程和模型实跑数据见 [#4](https://github.com/MrGeDiao/shuorenhua/issues/4) 和 [evals/results-v1.8.6.md](evals/results-v1.8.6.md)。
 
 ### 改完往哪个方向靠
 
@@ -191,12 +176,12 @@ Cursor、OpenClaw 和自建 agent 见[安装](#安装)。
 
 规则层覆盖 210+ 中文短语、96 条英文短语、19 类结构反模式。
 
-当前评测集共 73 条：
+当前评测集共 75 条：
 
 | 类型 | 数量 | 目标 |
 |------|------|------|
-| SF | 41 | 应该改的文本必须命中并改掉主要问题 |
-| SNF | 32 | 不该误杀的文本必须放行或轻提示 |
+| SF | 42 | 应该改的文本必须命中并改掉主要问题 |
+| SNF | 33 | 不该误杀的文本必须放行或轻提示 |
 | Real Samples | 19 | 整段样本按自然、保真、可直接发三项评分，长文加 `长度节奏` |
 | Scene Packs | 8 | README / release note / forum post / issue reply 的正反样本 |
 | Long-form In-place | 4 | 长文保长度场景，检查字数留存、句数对齐和关键转场 |

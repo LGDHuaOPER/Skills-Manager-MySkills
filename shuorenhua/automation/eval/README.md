@@ -39,11 +39,11 @@ mkdir -p tasks/current/eval-runs/2026-06-18-codex \
 |-------|------|
 | `SF01-14` | SF-01 到 SF-14 |
 | `SF15-28` | SF-15 到 SF-28 |
-| `SF29-41` | SF-29 到 SF-41 |
+| `SF29-42` | SF-29 到 SF-42 |
 | `SNF01-16` | SNF-01 到 SNF-16 |
-| `SNF17-31` | SNF-17 到 SNF-31 |
+| `SNF17-33` | SNF-17 到 SNF-33 |
 
-新增或补跑用例可以单独成批。v1.9.0 的 `SNF-32` 就按 `SNF32` 单条 follow-up 跑，输出命名为 `rewrite-SNF32.md` / `judge-...-SNF32.md`。
+新增或补跑用例可以单独成批。v1.9.0 的 `SNF-32` 就按 `SNF32` 单条 follow-up 跑，输出命名为 `rewrite-SNF32.md` / `judge-...-SNF32.md`；v1.9.1 的边界复跑也可以单独命名为 `targeted-v1.9.1`。
 
 如果模型或供应商的上下文 / 输出限制跑不下 5 批之一，可以继续细拆，例如把 `SNF01-16` 拆成 `SNF01-08` 和 `SNF09-16`。文件名保持区间可读即可，最终汇总时按原区间合并。
 

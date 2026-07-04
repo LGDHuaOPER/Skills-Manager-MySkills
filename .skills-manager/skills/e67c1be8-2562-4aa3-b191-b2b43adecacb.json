@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "e67c1be8-2562-4aa3-b191-b2b43adecacb",
+  "path": "obsidian-cli",
+  "path_key": "obsidian-cli",
+  "enabled": true,
+  "tags": [
+    "Editor",
+    "Editor/Obsidian",
+    "Editor/Obsidian/必装"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "kepano/obsidian-skills/obsidian-cli",
+    "subpath": "skills\\obsidian-cli",
+    "branch": null
+  }
+}

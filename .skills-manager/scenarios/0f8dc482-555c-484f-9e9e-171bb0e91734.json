@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "0f8dc482-555c-484f-9e9e-171bb0e91734",
+  "name": "Editor/Obsidian",
+  "description": null,
+  "icon": "notebook-pen",
+  "sort_order": 999
+}

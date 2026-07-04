@@ -31,7 +31,7 @@
 2. 再按需读取 `references/` 下的文件，补齐短语、结构、边界和误杀防护
 3. 然后读取 `./evals/benchmark.md`，对其中每一条测试用例执行评测
 
-### 对 Should Fix（SF-01 到 SF-41）：
+### 对 Should Fix（SF-01 到 SF-42）：
 - 先判断主场景（chat / status / docs / public-writing）和问题类型
 - 判断改写档位（minimal / standard / aggressive）
 - 判断 scope（structural / bounded / in-place）；长 `public-writing` 默认 `bounded`（整句空话进删除清单、实句句内洗、不并句不重排）；用户要求完全原样、或样本明确标为 `Long-form / in-place` 时，按 `in-place` 的句内改写边界处理
@@ -45,7 +45,7 @@
 - 对 `Scene Packs` 类 SF 用例，额外判断是否命中 `README / release-note / forum-post / issue-reply` 子场景，并按发布目的收束语气
 - 对 `Long-form / in-place` 类 SF 用例，额外检查是否保留句数、段落顺序和关键转场；如果删整句、合并相邻句、重排段落，记 `❌`
 
-### 对 Should NOT Fix（SNF-01 到 SNF-32）：
+### 对 Should NOT Fix（SNF-01 到 SNF-33）：
 - 判断这条文本为什么不该改
 - 如果保持原样或只做最小无害调整 → ✅ 通过
 - 如果错误修改了术语、系统主语、技术报告、引用原文、边界案例中的合理表达 → ❌ 误杀，说明误杀点
@@ -65,8 +65,8 @@
 ```
 
 并给出：
-- SF 通过率：X/41
-- SNF 误杀率：X/32
+- SF 通过率：X/42
+- SNF 误杀率：X/33
 - 是否达到目标：SF > 90%，SNF 误杀率 < 10%
 
 **注意：**
@@ -101,4 +101,4 @@ codex exec -C . --sandbox read-only \
 2. 把 `SKILL.md`、`references/` 下的文件和 `evals/benchmark.md` 的内容一起贴给模型
 3. token 不够时，优先保留 `SKILL.md` + `benchmark.md` + `scene-packs.md` + `severity.md` + `boundary-cases.md`
 
-注意：token 窗口较短的模型可能无法一次跑完 73 条，可以分批（先跑 SF，再跑 SNF）。
+注意：token 窗口较短的模型可能无法一次跑完 75 条，可以分批（先跑 SF，再跑 SNF）。
