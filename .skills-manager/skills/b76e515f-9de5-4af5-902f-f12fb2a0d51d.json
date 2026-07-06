@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "b76e515f-9de5-4af5-902f-f12fb2a0d51d",
+  "path": "summarize-interview",
+  "path_key": "summarize-interview",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-discovery"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

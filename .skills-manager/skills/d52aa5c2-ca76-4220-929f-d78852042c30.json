@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "d52aa5c2-ca76-4220-929f-d78852042c30",
+  "path": "pestle-analysis",
+  "path_key": "pestle-analysis",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

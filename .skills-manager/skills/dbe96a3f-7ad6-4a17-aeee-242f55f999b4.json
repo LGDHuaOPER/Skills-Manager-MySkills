@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "dbe96a3f-7ad6-4a17-aeee-242f55f999b4",
+  "path": "prioritize-features",
+  "path_key": "prioritize-features",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-discovery"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
