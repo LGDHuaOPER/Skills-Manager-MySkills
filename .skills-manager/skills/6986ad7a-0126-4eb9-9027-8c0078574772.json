@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "6986ad7a-0126-4eb9-9027-8c0078574772",
+  "path": "user-stories",
+  "path_key": "user-stories",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "476532ee-6fdb-4dde-b3cc-2d6f23808814",
+  "path": "pre-mortem",
+  "path_key": "pre-mortem",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
