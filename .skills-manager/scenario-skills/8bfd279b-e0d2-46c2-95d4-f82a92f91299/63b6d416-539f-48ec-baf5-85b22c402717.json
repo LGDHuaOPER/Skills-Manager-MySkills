@@ -10,7 +10,7 @@
     "codex": false,
     "cursor": false,
     "github_copilot": false,
-    "opencode": true,
+    "opencode": false,
     "pi": false,
     "windsurf": false
   }

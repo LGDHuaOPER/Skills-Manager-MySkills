@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "f73d9e37-0d94-4d44-be50-3fd057e4a687",
+  "path": "gitnexus-impact-analysis",
+  "path_key": "gitnexus-impact-analysis",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "f0515c38-5034-4135-baa2-e6c8655c631a",
+  "path": "gitnexus-pr-review",
+  "path_key": "gitnexus-pr-review",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

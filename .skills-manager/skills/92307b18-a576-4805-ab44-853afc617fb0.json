@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "92307b18-a576-4805-ab44-853afc617fb0",
+  "path": "gitnexus-exploring",
+  "path_key": "gitnexus-exploring",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

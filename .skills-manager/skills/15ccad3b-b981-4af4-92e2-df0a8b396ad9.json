@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "15ccad3b-b981-4af4-92e2-df0a8b396ad9",
+  "path": "gitnexus-refactoring",
+  "path_key": "gitnexus-refactoring",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "06daa6c3-4d14-44f6-8d2d-0be13cd443f8",
+  "path": "gitnexus-cli",
+  "path_key": "gitnexus-cli",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

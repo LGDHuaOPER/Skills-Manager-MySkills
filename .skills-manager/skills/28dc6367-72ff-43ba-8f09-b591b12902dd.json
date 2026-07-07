@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "28dc6367-72ff-43ba-8f09-b591b12902dd",
+  "path": "graphify",
+  "path_key": "graphify",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "464b17c2-f2d5-40b8-adb9-9c98cfe89c9d",
+  "path": "gitnexus-debugging",
+  "path_key": "gitnexus-debugging",
+  "enabled": true,
+  "tags": [
+    "AI-Coding",
+    "AI-Coding/团队开发必装"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
