@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "930d5e0f-b6fd-4317-93ab-6b69643be3b0",
+  "path": "product-name",
+  "path_key": "product-name",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-marketing-growth"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
