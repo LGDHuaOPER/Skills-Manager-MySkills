@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "296e3cd7-0dcd-4d83-a425-9880b8950393",
+  "path": "competitive-battlecard",
+  "path_key": "competitive-battlecard",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-go-to-market"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

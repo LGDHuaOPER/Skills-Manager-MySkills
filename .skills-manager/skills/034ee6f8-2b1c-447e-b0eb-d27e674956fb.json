@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "034ee6f8-2b1c-447e-b0eb-d27e674956fb",
+  "path": "ab-test-analysis",
+  "path_key": "ab-test-analysis",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-data-analytics"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

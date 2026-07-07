@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "a9c55438-dd45-4d3e-a22d-559c8a2acc6e",
+  "path": "ideal-customer-profile",
+  "path_key": "ideal-customer-profile",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-go-to-market"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

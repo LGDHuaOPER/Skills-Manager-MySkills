@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "a5f3697d-e020-479f-b3ea-275d503f1e9c",
+  "path": "market-sizing",
+  "path_key": "market-sizing",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "import",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
