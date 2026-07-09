@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "skill_id": "f9e1a884-439d-45c8-8b91-35d79915c080",
+  "skill_id": "92fe02ac-9c62-4754-ab1a-4417d47d2d84",
   "path": "tldraw-skill",
   "path_key": "tldraw-skill",
   "enabled": true,
@@ -9,9 +9,9 @@
     "Diagramming/Tldraw"
   ],
   "source": {
-    "type": "import",
-    "ref": null,
-    "subpath": null,
+    "type": "skillssh",
+    "ref": "agents365-ai/365-skills/tldraw-skill",
+    "subpath": "plugins\\tldraw\\skills\\tldraw-skill",
     "branch": null
   }
 }

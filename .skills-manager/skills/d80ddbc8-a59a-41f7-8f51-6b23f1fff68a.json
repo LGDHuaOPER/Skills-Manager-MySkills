@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "d80ddbc8-a59a-41f7-8f51-6b23f1fff68a",
+  "path": "creating-mermaid-diagrams",
+  "path_key": "creating-mermaid-diagrams",
+  "enabled": true,
+  "tags": [
+    "Diagramming",
+    "Diagramming/Mermaid"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "agents365-ai/365-skills/creating-mermaid-diagrams",
+    "subpath": "plugins\\mermaid\\skills\\mermaid-skill",
+    "branch": null
+  }
+}

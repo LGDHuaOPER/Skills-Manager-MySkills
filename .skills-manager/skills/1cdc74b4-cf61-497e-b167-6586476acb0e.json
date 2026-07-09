@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "skill_id": "888d42f7-2ae6-4c07-bd1b-b1a75ad625c8",
+  "skill_id": "1cdc74b4-cf61-497e-b167-6586476acb0e",
   "path": "excalidraw",
   "path_key": "excalidraw",
   "enabled": true,
@@ -9,9 +9,9 @@
     "Diagramming/Excalidraw"
   ],
   "source": {
-    "type": "import",
-    "ref": null,
-    "subpath": null,
+    "type": "skillssh",
+    "ref": "agents365-ai/365-skills/excalidraw",
+    "subpath": "plugins\\excalidraw\\skills\\excalidraw-skill",
     "branch": null
   }
 }

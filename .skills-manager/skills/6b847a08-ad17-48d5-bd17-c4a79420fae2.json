@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "skill_id": "2cd19e7c-4ec1-4838-a9b2-3cf7518cb1f8",
+  "skill_id": "6b847a08-ad17-48d5-bd17-c4a79420fae2",
   "path": "beautiful-feishu-whiteboard",
   "path_key": "beautiful-feishu-whiteboard",
   "enabled": true,
@@ -9,8 +9,8 @@
     "Diagramming/Feishu"
   ],
   "source": {
-    "type": "import",
-    "ref": null,
+    "type": "skillssh",
+    "ref": "zarazhangrui/beautiful-feishu-whiteboard/beautiful-feishu-whiteboard",
     "subpath": null,
     "branch": null
   }

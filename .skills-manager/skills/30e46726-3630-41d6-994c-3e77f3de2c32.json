@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "30e46726-3630-41d6-994c-3e77f3de2c32",
+  "path": "plantuml-skill",
+  "path_key": "plantuml-skill",
+  "enabled": true,
+  "tags": [
+    "Diagramming",
+    "Diagramming/PlantUML"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "agents365-ai/365-skills/plantuml-skill",
+    "subpath": "plugins\\plantuml\\skills\\plantuml-skill",
+    "branch": null
+  }
+}

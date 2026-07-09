@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "2cb35e63-09a8-4a57-8700-7da2a2332e11",
+  "path": "mindmap",
+  "path_key": "mindmap",
+  "enabled": true,
+  "tags": [
+    "Diagramming",
+    "Diagramming/MindMap"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "markdown-viewer/skills/mindmap",
+    "subpath": "mindmap",
+    "branch": null
+  }
+}
