@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "45209498-7f8c-4b77-94fc-7d93eab5b949",
+  "path": "porters-five-forces",
+  "path_key": "porters-five-forces",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/porters-five-forces",
+    "subpath": "pm-product-strategy\\skills\\porters-five-forces",
+    "branch": null
+  }
+}

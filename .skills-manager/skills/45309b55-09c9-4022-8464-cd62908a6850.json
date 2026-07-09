@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "45309b55-09c9-4022-8464-cd62908a6850",
+  "path": "analyze-feature-requests",
+  "path_key": "analyze-feature-requests",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-discovery"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/analyze-feature-requests",
+    "subpath": "pm-product-discovery\\skills\\analyze-feature-requests",
+    "branch": null
+  }
+}

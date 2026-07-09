@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "328097a4-3263-405a-985f-0950ce6a0013",
+  "path": "prioritization-frameworks",
+  "path_key": "prioritization-frameworks",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/prioritization-frameworks",
+    "subpath": "pm-execution\\skills\\prioritization-frameworks",
+    "branch": null
+  }
+}

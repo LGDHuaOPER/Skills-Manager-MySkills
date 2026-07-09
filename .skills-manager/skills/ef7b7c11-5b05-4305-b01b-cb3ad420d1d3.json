@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "ef7b7c11-5b05-4305-b01b-cb3ad420d1d3",
+  "path": "strategy-red-team",
+  "path_key": "strategy-red-team",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/strategy-red-team",
+    "subpath": "pm-execution\\skills\\strategy-red-team",
+    "branch": null
+  }
+}

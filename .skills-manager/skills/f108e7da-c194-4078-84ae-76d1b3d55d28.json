@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "f108e7da-c194-4078-84ae-76d1b3d55d28",
+  "path": "pricing-strategy",
+  "path_key": "pricing-strategy",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/pricing-strategy",
+    "subpath": "pm-product-strategy\\skills\\pricing-strategy",
+    "branch": null
+  }
+}

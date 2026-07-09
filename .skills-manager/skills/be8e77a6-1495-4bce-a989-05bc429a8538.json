@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "be8e77a6-1495-4bce-a989-05bc429a8538",
+  "path": "sql-queries",
+  "path_key": "sql-queries",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-data-analytics"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/sql-queries",
+    "subpath": "pm-data-analytics\\skills\\sql-queries",
+    "branch": null
+  }
+}

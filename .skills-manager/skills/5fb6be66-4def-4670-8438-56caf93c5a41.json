@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "5fb6be66-4def-4670-8438-56caf93c5a41",
+  "path": "gtm-motions",
+  "path_key": "gtm-motions",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-go-to-market"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/gtm-motions",
+    "subpath": "pm-go-to-market\\skills\\gtm-motions",
+    "branch": null
+  }
+}

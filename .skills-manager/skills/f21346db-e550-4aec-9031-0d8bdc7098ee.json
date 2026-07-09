@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "f21346db-e550-4aec-9031-0d8bdc7098ee",
+  "path": "grammar-check",
+  "path_key": "grammar-check",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-toolkit"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/grammar-check",
+    "subpath": "pm-toolkit\\skills\\grammar-check",
+    "branch": null
+  }
+}

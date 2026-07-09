@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "9d0eb603-13c2-4b39-976a-bce3221972ec",
+  "path": "draft-nda",
+  "path_key": "draft-nda",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-toolkit"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/draft-nda",
+    "subpath": "pm-toolkit\\skills\\draft-nda",
+    "branch": null
+  }
+}

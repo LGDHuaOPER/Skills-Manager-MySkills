@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "f9669ae1-1893-4685-8a76-c486ed3cc88f",
+  "path": "release-notes",
+  "path_key": "release-notes",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/release-notes",
+    "subpath": "pm-execution\\skills\\release-notes",
+    "branch": null
+  }
+}

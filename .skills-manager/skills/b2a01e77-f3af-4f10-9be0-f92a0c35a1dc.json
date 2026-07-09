@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "b2a01e77-f3af-4f10-9be0-f92a0c35a1dc",
+  "path": "review-resume",
+  "path_key": "review-resume",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-toolkit"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/review-resume",
+    "subpath": "pm-toolkit\\skills\\review-resume",
+    "branch": null
+  }
+}

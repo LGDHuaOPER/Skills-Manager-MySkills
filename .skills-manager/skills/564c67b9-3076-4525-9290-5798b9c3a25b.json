@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "564c67b9-3076-4525-9290-5798b9c3a25b",
+  "path": "beachhead-segment",
+  "path_key": "beachhead-segment",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-go-to-market"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/beachhead-segment",
+    "subpath": "pm-go-to-market\\skills\\beachhead-segment",
+    "branch": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "53c3e07a-8da6-4beb-bf04-16676e84ad80",
+  "path": "monetization-strategy",
+  "path_key": "monetization-strategy",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/monetization-strategy",
+    "subpath": "pm-product-strategy\\skills\\monetization-strategy",
+    "branch": null
+  }
+}

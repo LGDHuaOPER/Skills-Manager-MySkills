@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "66f78822-d01e-49a3-99a9-4e35163dd174",
+  "path": "business-model",
+  "path_key": "business-model",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/business-model",
+    "subpath": "pm-product-strategy\\skills\\business-model",
+    "branch": null
+  }
+}

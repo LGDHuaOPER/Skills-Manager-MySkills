@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "7f726168-bbd7-4ee1-bac4-f8530d2d2644",
+  "path": "marketing-ideas",
+  "path_key": "marketing-ideas",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-marketing-growth"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/marketing-ideas",
+    "subpath": "pm-marketing-growth\\skills\\marketing-ideas",
+    "branch": null
+  }
+}

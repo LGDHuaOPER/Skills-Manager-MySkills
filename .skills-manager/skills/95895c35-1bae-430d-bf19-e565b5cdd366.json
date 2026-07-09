@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "95895c35-1bae-430d-bf19-e565b5cdd366",
+  "path": "value-prop-statements",
+  "path_key": "value-prop-statements",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-marketing-growth"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/value-prop-statements",
+    "subpath": "pm-marketing-growth\\skills\\value-prop-statements",
+    "branch": null
+  }
+}

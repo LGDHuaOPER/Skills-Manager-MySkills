@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "3ae7ece0-2c89-4493-ad86-40008962c672",
+  "path": "privacy-policy",
+  "path_key": "privacy-policy",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-toolkit"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/privacy-policy",
+    "subpath": "pm-toolkit\\skills\\privacy-policy",
+    "branch": null
+  }
+}

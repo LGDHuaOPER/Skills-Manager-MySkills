@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "7af3d3be-60fe-40b1-a72c-4d751c7a9320",
+  "path": "retro",
+  "path_key": "retro",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/retro",
+    "subpath": "pm-execution\\skills\\retro",
+    "branch": null
+  }
+}

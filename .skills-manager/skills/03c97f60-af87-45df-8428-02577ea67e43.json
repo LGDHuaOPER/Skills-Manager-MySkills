@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "03c97f60-af87-45df-8428-02577ea67e43",
+  "path": "user-personas",
+  "path_key": "user-personas",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/user-personas",
+    "subpath": "pm-market-research\\skills\\user-personas",
+    "branch": null
+  }
+}

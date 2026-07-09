@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "89940ba3-6946-456c-8440-9b22d0dfb97f",
+  "path": "customer-journey-map",
+  "path_key": "customer-journey-map",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/customer-journey-map",
+    "subpath": "pm-market-research\\skills\\customer-journey-map",
+    "branch": null
+  }
+}

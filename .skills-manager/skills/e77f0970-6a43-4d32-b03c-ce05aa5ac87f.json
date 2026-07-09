@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "e77f0970-6a43-4d32-b03c-ce05aa5ac87f",
+  "path": "sentiment-analysis",
+  "path_key": "sentiment-analysis",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/sentiment-analysis",
+    "subpath": "pm-market-research\\skills\\sentiment-analysis",
+    "branch": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "bedaad5a-f901-419d-86b6-a97fefc23b7f",
+  "path": "shipping-artifacts",
+  "path_key": "shipping-artifacts",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-ai-shipping"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/shipping-artifacts",
+    "subpath": "pm-ai-shipping\\skills\\shipping-artifacts",
+    "branch": null
+  }
+}

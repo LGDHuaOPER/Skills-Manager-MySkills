@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "8627f2f7-9a18-4c1a-8c82-0539329461a1",
+  "path": "positioning-ideas",
+  "path_key": "positioning-ideas",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-marketing-growth"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/positioning-ideas",
+    "subpath": "pm-marketing-growth\\skills\\positioning-ideas",
+    "branch": null
+  }
+}

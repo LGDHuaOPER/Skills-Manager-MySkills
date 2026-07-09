@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "ff9ff7f7-0f3f-43c4-ab3c-594f67d06ce4",
+  "path": "brainstorm-ideas-existing",
+  "path_key": "brainstorm-ideas-existing",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-discovery"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/brainstorm-ideas-existing",
+    "subpath": "pm-product-discovery\\skills\\brainstorm-ideas-existing",
+    "branch": null
+  }
+}

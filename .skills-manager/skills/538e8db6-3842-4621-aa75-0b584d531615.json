@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "538e8db6-3842-4621-aa75-0b584d531615",
+  "path": "user-segmentation",
+  "path_key": "user-segmentation",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/user-segmentation",
+    "subpath": "pm-market-research\\skills\\user-segmentation",
+    "branch": null
+  }
+}

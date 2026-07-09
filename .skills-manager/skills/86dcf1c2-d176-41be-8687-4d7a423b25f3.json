@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "86dcf1c2-d176-41be-8687-4d7a423b25f3",
+  "path": "growth-loops",
+  "path_key": "growth-loops",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-go-to-market"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/growth-loops",
+    "subpath": "pm-go-to-market\\skills\\growth-loops",
+    "branch": null
+  }
+}

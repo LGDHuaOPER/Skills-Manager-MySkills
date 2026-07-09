@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "fa90eea8-fd06-4fb7-8a6d-778d177a0127",
+  "path": "outcome-roadmap",
+  "path_key": "outcome-roadmap",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/outcome-roadmap",
+    "subpath": "pm-execution\\skills\\outcome-roadmap",
+    "branch": null
+  }
+}

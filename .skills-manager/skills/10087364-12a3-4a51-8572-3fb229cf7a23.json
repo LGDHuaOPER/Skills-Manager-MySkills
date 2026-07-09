@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "10087364-12a3-4a51-8572-3fb229cf7a23",
+  "path": "lean-canvas",
+  "path_key": "lean-canvas",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/lean-canvas",
+    "subpath": "pm-product-strategy\\skills\\lean-canvas",
+    "branch": null
+  }
+}

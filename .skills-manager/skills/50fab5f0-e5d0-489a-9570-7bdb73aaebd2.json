@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "50fab5f0-e5d0-489a-9570-7bdb73aaebd2",
+  "path": "market-segments",
+  "path_key": "market-segments",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/market-segments",
+    "subpath": "pm-market-research\\skills\\market-segments",
+    "branch": null
+  }
+}

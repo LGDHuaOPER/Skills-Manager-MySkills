@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "38c56d40-64ba-4730-b711-0f6c69a28214",
+  "path": "summarize-interview",
+  "path_key": "summarize-interview",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-discovery"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/summarize-interview",
+    "subpath": "pm-product-discovery\\skills\\summarize-interview",
+    "branch": null
+  }
+}

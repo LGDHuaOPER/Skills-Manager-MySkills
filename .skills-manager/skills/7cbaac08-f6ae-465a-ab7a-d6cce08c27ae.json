@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "7cbaac08-f6ae-465a-ab7a-d6cce08c27ae",
+  "path": "swot-analysis",
+  "path_key": "swot-analysis",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-strategy"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/swot-analysis",
+    "subpath": "pm-product-strategy\\skills\\swot-analysis",
+    "branch": null
+  }
+}

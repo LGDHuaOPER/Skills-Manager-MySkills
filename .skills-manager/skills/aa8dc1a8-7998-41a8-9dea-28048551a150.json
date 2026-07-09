@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "aa8dc1a8-7998-41a8-9dea-28048551a150",
+  "path": "test-scenarios",
+  "path_key": "test-scenarios",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/test-scenarios",
+    "subpath": "pm-execution\\skills\\test-scenarios",
+    "branch": null
+  }
+}

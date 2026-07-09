@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "5e0bfc56-c47e-4e10-906d-045346472d42",
+  "path": "competitor-analysis",
+  "path_key": "competitor-analysis",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-market-research"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/competitor-analysis",
+    "subpath": "pm-market-research\\skills\\competitor-analysis",
+    "branch": null
+  }
+}

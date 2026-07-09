@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "88658459-a551-43c2-aa0c-bb0bf7436e9e",
+  "path": "sprint-plan",
+  "path_key": "sprint-plan",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/sprint-plan",
+    "subpath": "pm-execution\\skills\\sprint-plan",
+    "branch": null
+  }
+}

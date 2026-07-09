@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "609e4fa6-2b3f-4467-8d97-ffcf2ed1985a",
+  "path": "summarize-meeting",
+  "path_key": "summarize-meeting",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/summarize-meeting",
+    "subpath": "pm-execution\\skills\\summarize-meeting",
+    "branch": null
+  }
+}

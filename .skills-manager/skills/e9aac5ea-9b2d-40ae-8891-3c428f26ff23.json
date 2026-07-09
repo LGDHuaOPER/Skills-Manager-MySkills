@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "e9aac5ea-9b2d-40ae-8891-3c428f26ff23",
+  "path": "brainstorm-experiments-new",
+  "path_key": "brainstorm-experiments-new",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-product-discovery"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/brainstorm-experiments-new",
+    "subpath": "pm-product-discovery\\skills\\brainstorm-experiments-new",
+    "branch": null
+  }
+}

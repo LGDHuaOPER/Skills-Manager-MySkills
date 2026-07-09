@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "e4bc8b73-9d1f-47c1-a667-4c5526d03515",
+  "path": "stakeholder-map",
+  "path_key": "stakeholder-map",
+  "enabled": true,
+  "tags": [
+    "Product-Management",
+    "Product-Management/phuryn__pm-skills",
+    "Product-Management/pm-execution"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "phuryn/pm-skills/stakeholder-map",
+    "subpath": "pm-execution\\skills\\stakeholder-map",
+    "branch": null
+  }
+}
