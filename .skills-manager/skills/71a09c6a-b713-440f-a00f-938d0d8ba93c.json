@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "71a09c6a-b713-440f-a00f-938d0d8ba93c",
+  "path": "pdf-ocr-extraction",
+  "path_key": "pdf-ocr-extraction",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PDF"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "claude-office-skills/skills/pdf-ocr-extraction",
+    "subpath": null,
+    "branch": null
+  }
+}

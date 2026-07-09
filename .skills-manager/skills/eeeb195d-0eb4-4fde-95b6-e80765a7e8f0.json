@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "eeeb195d-0eb4-4fde-95b6-e80765a7e8f0",
+  "path": "pdf-extraction",
+  "path_key": "pdf-extraction",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PDF"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "claude-office-skills/skills/pdf-extraction",
+    "subpath": "pdf-extraction",
+    "branch": null
+  }
+}

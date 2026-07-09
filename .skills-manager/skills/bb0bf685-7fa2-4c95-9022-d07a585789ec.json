@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "bb0bf685-7fa2-4c95-9022-d07a585789ec",
+  "path": "pdf-converter",
+  "path_key": "pdf-converter",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PDF"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "claude-office-skills/skills/pdf-converter",
+    "subpath": "pdf-converter",
+    "branch": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "a13913c1-ad91-4123-a38c-ae75203df412",
+  "path": "minimax-pdf",
+  "path_key": "minimax-pdf",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PDF"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "minimax-ai/skills/minimax-pdf",
+    "subpath": "skills\\minimax-pdf",
+    "branch": null
+  }
+}

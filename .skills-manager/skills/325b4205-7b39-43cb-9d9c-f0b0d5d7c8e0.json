@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "325b4205-7b39-43cb-9d9c-f0b0d5d7c8e0",
+  "path": "pptx-generator",
+  "path_key": "pptx-generator",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PPT"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "minimax-ai/skills/pptx-generator",
+    "subpath": "skills\\pptx-generator",
+    "branch": null
+  }
+}

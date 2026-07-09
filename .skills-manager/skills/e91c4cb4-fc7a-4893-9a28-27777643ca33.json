@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "e91c4cb4-fc7a-4893-9a28-27777643ca33",
+  "path": "xlsx-manipulation",
+  "path_key": "xlsx-manipulation",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/Excel"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "claude-office-skills/skills/xlsx-manipulation",
+    "subpath": "xlsx-manipulation",
+    "branch": null
+  }
+}

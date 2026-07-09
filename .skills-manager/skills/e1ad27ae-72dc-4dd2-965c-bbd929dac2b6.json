@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "e1ad27ae-72dc-4dd2-965c-bbd929dac2b6",
+  "path": "pptx-manipulation",
+  "path_key": "pptx-manipulation",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/PPT"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "claude-office-skills/skills/pptx-manipulation",
+    "subpath": "pptx-manipulation",
+    "branch": null
+  }
+}

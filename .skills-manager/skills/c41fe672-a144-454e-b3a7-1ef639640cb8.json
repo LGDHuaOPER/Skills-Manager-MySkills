@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "c41fe672-a144-454e-b3a7-1ef639640cb8",
+  "path": "docx-manipulation",
+  "path_key": "docx-manipulation",
+  "enabled": true,
+  "tags": [
+    "Documentation",
+    "Documentation/Word"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "claude-office-skills/skills/docx-manipulation",
+    "subpath": "docx-manipulation",
+    "branch": null
+  }
+}
