@@ -6,8 +6,7 @@
   "enabled": true,
   "tags": [
     "Editor",
-    "Editor/Obsidian",
-    "Editor/Obsidian/必装"
+    "Editor/Obsidian"
   ],
   "source": {
     "type": "skillssh",

@@ -5,8 +5,7 @@
   "path_key": "codebase-memory",
   "enabled": true,
   "tags": [
-    "AI-Coding",
-    "AI-Coding/必装"
+    "AI-Coding"
   ],
   "source": {
     "type": "import",
