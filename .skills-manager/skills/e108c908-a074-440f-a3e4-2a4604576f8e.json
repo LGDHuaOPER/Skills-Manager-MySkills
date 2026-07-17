@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "skill_id": "e108c908-a074-440f-a3e4-2a4604576f8e",
+  "path": "tutor-setup",
+  "path_key": "tutor-setup",
+  "enabled": true,
+  "tags": [
+    "Study"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "roundtable02/tutor-skills/tutor-setup",
+    "subpath": "skills\\tutor-setup",
+    "branch": null
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "cmss-dipg-personal-weekly-report",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请帮我生成本周的周报。",
+      "expected_output": "读取当周日记后，生成 OKR/非 OKR 工作周报表格，输出到周记文件 # Weekly Note > ## 本周小结 > ### 工作周报（AI 生成） 位置下，等待用户 Review 后再写入。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "WRITE_DIRECTLY 生成 2026-W28 的周报。",
+      "expected_output": "直接创建/写入 2026-W28 的周记文件（若不存在则尝试从模板创建），包含 AI 生成的周报内容，不等待 Review。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "根据我本周的日记生成周报，其中有一个任务我不确定进度。",
+      "expected_output": "读取日记后，对进度不明的任务弹窗询问用户，获取答案后继续生成并输出周报。",
+      "files": []
+    }
+  ]
+}

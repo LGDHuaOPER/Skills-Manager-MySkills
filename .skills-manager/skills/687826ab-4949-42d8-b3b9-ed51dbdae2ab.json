@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "skill_id": "687826ab-4949-42d8-b3b9-ed51dbdae2ab",
+  "path": "tutor",
+  "path_key": "tutor",
+  "enabled": true,
+  "tags": [
+    "Study"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "roundtable02/tutor-skills/tutor",
+    "subpath": "skills\\tutor",
+    "branch": null
+  }
+}
