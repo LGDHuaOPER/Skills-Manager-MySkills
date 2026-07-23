@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "skill_id": "72ca0535-0c25-454b-bcf7-f54ef3d6891b",
+  "path": "qmd",
+  "path_key": "qmd",
+  "enabled": true,
+  "tags": [
+    "Search-Engine"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "tobi/qmd/qmd",
+    "subpath": "skills\\qmd",
+    "branch": null
+  }
+}
