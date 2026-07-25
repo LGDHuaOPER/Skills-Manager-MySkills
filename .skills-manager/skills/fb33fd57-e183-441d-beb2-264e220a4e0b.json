@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "fb33fd57-e183-441d-beb2-264e220a4e0b",
+  "path": "dedao-dl-usage",
+  "path_key": "dedao-dl-usage",
+  "enabled": true,
+  "tags": [
+    "Knowledge-Service",
+    "Knowledge-Service/得到"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "yann0917/dedao-dl/dedao-dl-usage",
+    "subpath": "skills\\dedao-dl-usage",
+    "branch": null
+  }
+}
