@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "8e457c95-9d2c-46da-bdfe-8cb040225013",
+  "path": "patent-disclosure-skill",
+  "path_key": "patent-disclosure-skill",
+  "enabled": true,
+  "tags": [
+    "Research",
+    "Research/Patent"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "handsomestwei/patent-disclosure-skill/patent-disclosure-skill",
+    "subpath": null,
+    "branch": null
+  }
+}

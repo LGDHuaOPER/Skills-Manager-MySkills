@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "9ad8530f-471f-4622-ac4e-e43a759b5e92",
+  "path": "patent-write",
+  "path_key": "patent-write",
+  "enabled": true,
+  "tags": [
+    "Research",
+    "Research/Patent"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "xstongxue/best-skills/patent-write",
+    "subpath": "skills\\patent-write",
+    "branch": null
+  }
+}
