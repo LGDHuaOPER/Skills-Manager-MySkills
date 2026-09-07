@@ -6,8 +6,7 @@
   "enabled": true,
   "tags": [
     "Product-Management",
-    "Product-Management/phuryn__pm-skills",
-    "Product-Management/pm-execution"
+    "Product-Management/phuryn__pm-skills"
   ],
   "source": {
     "type": "skillssh",
