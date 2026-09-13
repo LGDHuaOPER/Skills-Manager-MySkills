@@ -5,8 +5,7 @@
   "path_key": "shuorenhua",
   "enabled": true,
   "tags": [
-    "Humanizer",
-    "Humanizer/zh"
+    "Humanizer"
   ],
   "source": {
     "type": "skillssh",

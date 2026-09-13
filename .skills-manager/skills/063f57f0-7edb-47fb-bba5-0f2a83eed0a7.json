@@ -5,8 +5,7 @@
   "path_key": "humanizer",
   "enabled": true,
   "tags": [
-    "Humanizer",
-    "Humanizer/en"
+    "Humanizer"
   ],
   "source": {
     "type": "skillssh",

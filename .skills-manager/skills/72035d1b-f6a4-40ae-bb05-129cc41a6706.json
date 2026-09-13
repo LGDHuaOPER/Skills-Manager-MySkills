@@ -5,8 +5,7 @@
   "path_key": "stop-slop",
   "enabled": true,
   "tags": [
-    "Humanizer",
-    "Humanizer/en"
+    "Humanizer"
   ],
   "source": {
     "type": "skillssh",
