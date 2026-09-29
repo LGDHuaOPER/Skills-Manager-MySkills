@@ -9,8 +9,9 @@
 示例：
 
   python skills/patent-search/tools/cnipa_search.py --inventor "姓名" --applicant "单位"
-  python skills/patent-search/tools/cnipa_search.py --title "数据处理" --class B01J20 --max-pages 2
+  python skills/patent-search/tools/cnipa_search.py --title "数据处理" --abstract "吸附 and 再生" --class B01J20 --max-pages 2
   python skills/patent-search/tools/cnipa_search.py --inventor "姓名" --complete
+  python skills/patent-search/tools/cnipa_search.py --abstract "折叠 and 杯盖" --class 09-03 --type design --derived-from image --type-inferred
 
 结果 Markdown 由 ``emit_search_report.py`` 写入 ``outputs/patent-search/``。
 """
@@ -31,6 +32,13 @@ if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 
 from cnipa_parse import EpubSearchHit, application_number_for_epub_query
+from derived_query import (
+    DISCLAIMER,
+    inferred_type_note,
+    query_mode_for,
+    normalize_derived_from,
+    require_image_patent_type,
+)
 from emit_search_report import write_search_report
 from patent_type import TYPE_ALL, normalize_patent_type
 from search_config import load_search_config, resolve_max_pages
@@ -147,7 +155,7 @@ def completeness_note(
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="公布站高级查询：发明人/申请人/分类号/名称等，默认少翻页"
+        description="公布站高级查询：发明人/申请人/分类号/名称/摘要等，默认少翻页"
     )
     parser.add_argument("--inventor", default="", help="发明人/设计人")
     parser.add_argument(
@@ -157,6 +165,11 @@ def _build_parser() -> argparse.ArgumentParser:
         help="申请人/单位；可重复",
     )
     parser.add_argument("--title", default="", help="名称")
+    parser.add_argument(
+        "--abstract",
+        default="",
+        help="摘要/简要说明；可用 and / or / not（运算符前后空格）",
+    )
     parser.add_argument("--class", dest="class_code", default="", help="分类号 IPC/LOC")
     parser.add_argument("--application-number", default="", help="申请号")
     parser.add_argument("--publication-number", default="", help="公开号/公告号")
@@ -176,6 +189,21 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="第一页读到「共 N 页」则按总页数翻完；读不到才用 max_pages_hard；未完成不得称全部",
     )
+    parser.add_argument(
+        "--derived-from",
+        default="",
+        help="image|claims：由单图或权要生成的名称/摘要检索式；写入报告，不改变填表",
+    )
+    parser.add_argument(
+        "--derived-note",
+        default="",
+        help="派生检索的理解要点（产品/特征/权要主题），写入报告",
+    )
+    parser.add_argument(
+        "--type-inferred",
+        action="store_true",
+        help="单图未口头指定类型、由看图推断时加上；报告写入推断说明",
+    )
     return parser
 
 
@@ -187,6 +215,7 @@ def _query_fields(args: argparse.Namespace) -> dict[str, str]:
         "inventor": args.inventor,
         "applicant": args.applicant[0] if args.applicant else "",
         "title": args.title,
+        "abstract": args.abstract,
         "class_code": args.class_code,
         "application_number": application_number,
         "publication_number": args.publication_number,
@@ -202,10 +231,32 @@ def main(argv: list[str] | None = None) -> int:
     except ValueError as exc:
         print(f"ERROR: 专利类型参数无效：{exc}", file=sys.stderr)
         return 2
+    try:
+        derived_from = normalize_derived_from(args.derived_from)
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
+    derived_note = (args.derived_note or "").strip()
     fields = _query_fields(args)
     if not fields:
-        print("ERROR: 请至少提供一个检索字段（发明人/申请人/名称/分类号/申请号/公开号）", file=sys.stderr)
+        print(
+            "ERROR: 请至少提供一个检索字段（发明人/申请人/名称/摘要/分类号/申请号/公开号）",
+            file=sys.stderr,
+        )
         return 2
+    if derived_from and not (fields.get("title") or fields.get("abstract")):
+        print(
+            "ERROR: 单图/权要检索须至少填写名称或摘要关键字",
+            file=sys.stderr,
+        )
+        return 2
+    try:
+        require_image_patent_type(derived_from, patent_type)
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
+    type_inferred = bool(args.type_inferred) and derived_from == "image"
+    type_note = inferred_type_note(patent_type) if type_inferred else ""
     if args.max_pages is not None and args.max_pages < 1:
         print("ERROR: --max-pages 必须至少为 1", file=sys.stderr)
         return 2
@@ -247,7 +298,8 @@ def main(argv: list[str] | None = None) -> int:
     payload = {
         "source": "http://epub.cnipa.gov.cn/Advanced",
         "scope": "published_records_only",
-        "query_mode": "advanced_bibliographic",
+        "query_mode": query_mode_for(derived_from),
+        "disclaimer": DISCLAIMER if derived_from else "",
         "queried_at": queried_at.strftime("%Y-%m-%d %H:%M:%S"),
         "query": {
             **fields,
@@ -255,6 +307,10 @@ def main(argv: list[str] | None = None) -> int:
             "patent_type": patent_type,
             "max_pages": page_limit,
             "want_complete": bool(args.complete),
+            "derived_from": derived_from,
+            "derived_note": derived_note,
+            "type_inferred": type_inferred,
+            "type_note": type_note,
         },
         "complete": search.complete,
         "stop_reason": search.stop_reason,

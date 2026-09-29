@@ -52,9 +52,11 @@ git clone <本仓库 URL> "$env:USERPROFILE\.cursor\skills\patent-disclosure-ski
 
 若未使用上述 `skills/` 布局，也可**直接用 Cursor 打开本仓库根目录**作为工作区。分步指令在：
 
-- `skills/patent-disclosure/prompts/`（交底；含 `invention/`、`utility_model/`、`design/` 以及填表 / 线稿）
+- `skills/patent-disclosure/prompts/`（交底；含 `invention/`、`utility_model/`、`design/`、填表 / 线稿，以及旁路 `fence/` 保护型 1+N）
 - `skills/patent-application/prompts/`（申请文件四件套；须指定交底目录）
+- `skills/patent-docket/prompts/`（交底到申请一趟串起来；须显式）
 - `skills/patent-reader/prompts/`（通俗解读；含本包 `fill_*`）
+- `skills/patent-map/prompts/`（专利地图；须显式）
 
 Cursor 也会扫描 **`~/.claude/skills/`**、项目内 **`.claude/skills/`** 等路径；详见 Cursor 官方文档与当前版本设置项。
 
@@ -91,6 +93,12 @@ python skills/patent-disclosure/tools/md_to_docx.py -i 定稿.md -o 定稿.docx 
 ```
 
 **实用新型 / 外观**定稿以各类型 `skills/patent-disclosure/prompts/utility_model|design/disclosure_builder.md` 为准：填表产出 `structure_schema`/`appearance_schema` + **`figure_plan.yaml`**，成文只嵌清单入文图（结构图或视图；docx 对实用建议、对外观可选）。不跑发明 mermaid 时，仍建议装 `requirements.txt`（扫 Word/PPT、出 docx）。
+
+扫描目录里有 **PDF** 时再装：
+
+```bash
+pip install -r skills/patent-disclosure/tools/requirements-pdf.txt
+```
 
 仅在编辑器里**手写** Markdown、完全不跑仓库脚本时，才不必装 Python。
 
@@ -166,6 +174,18 @@ python skills/patent-application/tools/emit_application_docx.py --dir outputs/pa
 
 缺材料时门禁退出码为 2，应先回到交底技能补齐。细则见 [skills/patent-application/SKILL.md](skills/patent-application/SKILL.md)。
 
+## 可选：案卷会稿（须显式）
+
+把交底书和申请文件串成一趟：按发明人/工程师给的材料成文，申请问题清单上的缺口最多改三轮。不另装依赖（根目录 `PyYAML`）。本包只记账和派工，正文仍由交底包、申请包来写；派工时读对方 `SKILL.md`，不要从这里调那些包的 `tools/`。缺技术事实就停下来问，不要编。
+
+```bash
+python skills/patent-docket/tools/init_docket.py --case-id {案件slug} --mode from_zero
+python skills/patent-docket/tools/validate_docket.py --yaml outputs/docket/{案件slug}/docket.yaml
+python skills/patent-docket/tools/emit_tracker.py --yaml outputs/docket/{案件slug}/docket.yaml
+```
+
+产物在 `outputs/docket/{案件}/`（`docket.yaml` + `TRACKER.md`），机读前缀 `DOCKET_DIR:` / `DOCKET_YAML:` / `DOCKET_OK:` / `DOCKET_ERROR:`。细则见 [skills/patent-docket/SKILL.md](skills/patent-docket/SKILL.md)。
+
 ## 可选：审查答复案例库（默认关闭）
 
 显式触发「审查答复 / 案例入库 / `/oa`」后使用。配置与向量库默认在操作系统**文档**目录：`{Documents}/patent-disclosure-skill/oa/`（`PATENT_OA_HOME` 可覆盖）。**推荐**智谱 `embedding-3`；亦支持 DashScope / MiniMax / 本地 / OpenAI（`config.py set --preset …`）。
@@ -212,7 +232,10 @@ $env:PATENT_READER_GLOSSARY_DIR = "Research/术语"
 
 ```bash
 pip install -r skills/patent-reader/tools/requirements.txt   # PDF：pymupdf
+pip install -r skills/patent-map/tools/requirements.txt     # 可选：专利地图语义地形（fastembed，不含 PyTorch）
 ```
+
+专利地图向量模型与加速副本默认在文档目录 `{Documents}/patent-disclosure-skill/patent-map/`（与 oa 同级，`PATENT_MAP_HOME` 可覆盖），不要下到工作区。可先跑 `python skills/patent-map/tools/ensure_model.py`。
 
 **首次使用**：解读**入库时会自动**初始化库（CSS、Bases、索引、关系图配色）。用户只需安装 Obsidian、配置库路径，并（可选）在社区插件市场安装 Dataview 等——步骤与插件清单见 **`skills/patent-reader/docs/obsidian-setup-guide.md`**。交付后 Agent 按 **`skills/patent-reader/prompts/obsidian_plugin_guide.md`** 引导可选插件。
 

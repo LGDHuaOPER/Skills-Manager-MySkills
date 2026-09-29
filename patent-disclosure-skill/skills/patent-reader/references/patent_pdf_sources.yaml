@@ -57,7 +57,7 @@ unstable_or_skip:
     notes: patents.google.com/patent/{pub}.pdf 常失败。
   - id: commercial_dbs
     status: account_required
-    notes: 智慧芽/incoPat 等需账号，不写入默认技能链路。
+    notes: 需账号的付费专利库不写入默认技能链路。
 
 # 示例专利已知 CDN（仅 examples；通用下载仍应解析页面）
 known_cdn_examples:

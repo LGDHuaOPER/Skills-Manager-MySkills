@@ -32,10 +32,12 @@ python skills/patent-disclosure/tools/image_gen.py --case-dir "outputs/{案件�
 |------|------|
 | `kind` | `lineart` 仅当本来就是结构/外观线稿（专利附图、干净黑白轮廓）。CAD 投影写 `cad`，实拍写 `photo_clean` / `photo_scene` |
 | `relevance` | 0–100，与本案主题/部件/外形是否同一对象 |
-| `quality` | 0–100：清晰、少遮挡、不是瞎画/糊图/广告拼图 |
+| `quality` | 0–100：清晰、少遮挡、不是瞎画/糊图/广告拼图。**外观**另须过 `design_view_cnipa.md`（未过则不得超过 69） |
 | `score` | 可与 `0.5*relevance+0.5*quality` 一致 |
 
 合格已有线稿（走途经 1）：`kind: lineart` 且 `score>=70`，若写了分项则 **relevance 与 quality 均 >=70**，文件存在。瞎画、与本案无关、CAD 投影：**不能**标成合格线稿。
+
+**外观另加**（`prompts` 先 `Read` `references/design_view_cnipa.md`）：正投影（或立体图角色正确）、各视比例一致、无尺寸线/中心线/阴影线、图内无图号/视图名。电子申请画布对准 JPEG、不超过 150mm×220mm、72–300 DPI。未过该清单则 `quality` **不得超过 69**，**不得** `existing_lineart`，必须重画。实拍按 4.2.3：透视棚拍不得当合格 `photo_clean` 正投影。
 
 ## 入文
 
@@ -69,3 +71,5 @@ CAD 投影进 figure_plan 后**重评分**，再跑本脚本；有合格线稿�
 3. 用该描述 + `gen_prompt` **文生图**，仍禁止发明未见结构。
 
 不要写死某一家出图工具名。
+
+**外观生成规格**（途经 2）：`gen_prompt` 与画布直接对准 `design_view_cnipa.md`（正投影或正确立体图、各视比例一致、禁尺寸线/中心线/阴影线、图内无图号/视图名、JPEG、不超过 150mm×220mm、72–300 DPI）。不要先出草稿留给申请文件加工。

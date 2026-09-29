@@ -24,4 +24,4 @@
 
 ## 外观
 
-不走五部分发明书式。见 `prompts/design_application.md`：简要说明 + 视图 + 实拍/线稿对应。
+不走五部分发明书式。见 `prompts/design_application.md`：简要说明 + 视图选择（全线稿或全实拍）+ 实拍/线稿对应。视图按 `design_view_cnipa.md` 核查，原图不改，缺口进问题清单。

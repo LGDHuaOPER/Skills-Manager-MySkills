@@ -1,12 +1,16 @@
 # 公布公告著录检索
 
-用于按发明人、申请人/单位、分类号、名称、申请号/公开号等字段检索中国专利公布公告。个人公开清单只是其中一种用法，不是本包的全部定义。
+用于按发明人、申请人/单位、分类号、名称、摘要/简要说明、申请号/公开号等字段检索中国专利公布公告。个人公开清单只是其中一种用法，不是本包的全部定义。
+
+用户给**一张图**或**一段权利要求**时，先 `Read` `prompts/derived_query.md`，把材料收成名称/摘要关键字后再检索；不要把图上传到公布站，也不要声称以图搜图或权要语义检索。
 
 与交底 Step 5 技术主题查新不同：本流程走高级查询多条件，并按配置翻页；**不要**用交底轻量一词一页的结果代替本包。
 
 ## 必要输入
 
-至少一项：发明人、申请人、分类号、名称、申请号或公开号。缺省字段不填。多条件按公布站高级查询 AND。
+至少一项：发明人、申请人、分类号、名称、摘要/简要说明、申请号或公开号。缺省字段不填。多条件按公布站高级查询 AND。
+
+单图 / 权要入口另须：读懂材料后至少填名称或摘要，并传 `--derived-from image|claims`。**单图必须带 `--type`（design / utility_model / invention），禁止 `all`**；用户没说类型时看图推断并加 `--type-inferred`。抽词口径见 `prompts/derived_query.md`。权要按权利要求主题选类型，可用 `all`。
 
 个人清单场景另需：
 
@@ -34,11 +38,26 @@ python skills/patent-search/tools/cnipa_search.py \
   --type all
 ```
 
-其他字段示例：`--title`、`--class`、`--application-number`、`--publication-number`。
+其他字段示例：`--title`、`--abstract`、`--class`、`--application-number`、`--publication-number`。
+
+摘要/简要说明对应高级查询 `#abs`（`#ab` 与标签兜底），发明/实用新型走摘要，外观走简要说明。可用 `and` / `or` / `not`（前后空格）和 `?` / `%` 通配。
+
+单图或权要示例：
+
+```bash
+python skills/patent-search/tools/cnipa_search.py \
+  --title "杯盖" \
+  --abstract "折叠 and 密封" \
+  --class 09-03 \
+  --type design \
+  --derived-from image \
+  --type-inferred \
+  --derived-note "折叠杯盖"
+```
 
 脚本会：
 
-1. 使用高级查询页字段（发明人 `#e72`、名称 `#ti`、分类号 `#e51` 等），禁止用首页综合关键词框模拟发明人检索；申请号在填表前去掉校验点（`201921114883.3` → `2019211148833`）；
+1. 使用高级查询页字段（发明人 `#e72`、名称 `#ti`、摘要 `#abs`、分类号 `#e51` 等），禁止用首页综合关键词框模拟发明人检索；申请号在填表前去掉校验点（`201921114883.3` → `2019211148833`）；
 2. 先解析**当前结果页**：采 `total_pages`（「共 N 页」）、`page_size_actual`（`#pageSize` /「每页 N 条」）和本页命中数；再点「下页」。不要跳「到第 N 页」，不要对第 1 页再 POST 一遍，也不要清空 `#searchAfter`（会 HTTP 400）；
 3. 400 时退避重试，仍失败则 `complete=false` 停止，禁止死循环；
 4. `--complete` 的目标页数在采到总页数时等于总页数；探测不到才用 `max_pages_hard`。普通检索达到 `max_pages` 即停；

@@ -16,10 +16,10 @@ figures:
   - fig: 1                   # 交底「如图 N」；不入文则为 null
     role: assembly           # 见下方枚举
     path: ""                 # 相对案件根或 knowledge 的路径
-    covers: []               # 实用新型：parts.id；外观：views.name 或要点短标签
+    covers: []               # 实用新型：parts.id；外观：官方视图全称（主视图、后视图…、立体图）或要点短标签
     kind: lineart            # lineart | cad | photo_clean | photo_scene | other
     relevance: 0             # 0–100，与本案是否同一对象
-    quality: 0               # 0–100：清晰、少遮挡、不是瞎画
+    quality: 0               # 0–100：清晰、少遮挡；外观另须过 design_view_cnipa.md（未过则 ≤69）
     score: 0                 # 可与 0.5*relevance+0.5*quality 一致
     use_in_disclosure: true  # 入文才 true。cad 禁止。外观：实拍+线稿都可 true；实用：仅合格 lineart
     reason: ""               # 选用或剔除的一句话
@@ -44,7 +44,7 @@ figures:
 |------|----------|------|
 | `assembly` | 总装/装配关系 | — |
 | `detail` | 局部（卡扣、缺口等） | 造型局部 |
-| `ortho` | 正交/投影结构图 | 正投影（主/后/左/右/俯/仰等，按要点落面，非默认六视） |
+| `ortho` | 正交/投影结构图 | 正投影（主视图/后视图/左视图/右视图/俯视图/仰视图，按要点落面，非默认六视） |
 | `perspective` | 立体结构示意 | 立体图 |
 | `reference` | 仅参考、默认不入正文 | 场景/包装等参考 |
 | `rejected` | 明确不入文 | 同左 |
@@ -75,9 +75,9 @@ figures:
 
 - `kind: lineart` **仅当**材料本来就是结构/外观线稿（专利附图、干净黑白轮廓），且内容匹配、不是瞎画。  
 - CAD / STEP 投影写 `kind: cad`，实拍写 `photo_clean` / `photo_scene`。  
-- **合格已有线稿**（可入文、可跳过生成）：`kind: lineart` 且 `score>=70`；若写了分项则 **relevance 与 quality 均 >=70**。  
+- **合格已有线稿**（可入文、可跳过生成）：`kind: lineart` 且 `score>=70`；若写了分项则 **relevance 与 quality 均 >=70**。外观还须过 `references/design_view_cnipa.md`；未过则 `quality`≤69，必须重画。  
 - `kind: cad`：**禁止** `use_in_disclosure: true`。`reason` 写明「CAD 投影，仅作生图材料」。  
-- 实拍不得标成 `kind: lineart`。外观的干净实拍（`photo_clean`）**要入文**（与线稿一起进 md 和 Word）。实用新型实拍默认不入文。
+- 实拍不得标成 `kind: lineart`。外观的干净实拍（`photo_clean`）须符合 4.2.3（单一背景、少透视、少阴影）才入文；透视棚拍为 `photo_scene`，只作参考。实用新型实拍默认不入文。
 
 ## 排序启发式（填表时打分）
 
@@ -94,7 +94,7 @@ figures:
 1. 清单内合格 `lineart` 的立体/正投影 **与** 对应 `photo_clean` 实拍 → **都入文**（md + Word）  
 2. `cad`：只打分，作图生图参考，**不入文**  
 3. 重场景、广告包装（`photo_scene`）→ 默认 `reference` 或不入文  
-4. 要点落面缺源图 → AppearanceSchema `uncertain`；故意省略面只写 `omitted_views`，不要写成「缺六视」
+4. 要点落面缺源图 → AppearanceSchema `uncertain`；故意省略面只写 `omitted_views`，不要默补六视、不要写成「缺六视」
 
 ## 跨图核对（填表强制）
 

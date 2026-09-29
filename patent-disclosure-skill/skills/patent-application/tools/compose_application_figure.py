@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """把源图做成黑白申请附图 PNG（按内容截取，不画图号、不铺 A4 留白）。
 
+仅用于实用新型升格与发明点名图。外观禁用（原样复制交底图，不合格只记问题清单）。
+
 用法：
   python tools/compose_application_figure.py --source 线稿.png --fig 1 --out-dir figures
   python tools/compose_application_figure.py --source 场景.png --fig 3 --out-dir figures --abstract

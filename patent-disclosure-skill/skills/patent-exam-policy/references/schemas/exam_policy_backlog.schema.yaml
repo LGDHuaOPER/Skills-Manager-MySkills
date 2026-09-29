@@ -5,7 +5,7 @@
 
 ```yaml
 $schema: exam_policy_backlog
-version: 3
+version: 4
 id: POLICY-YYYYMMDD-HHMM
 generated_at: ""                 # YYYY-MM-DD HH:MM +08:00
 time_window: ""
@@ -13,6 +13,7 @@ scope: all                       # tools | subject_matter | procedure | utility_
 status: briefing                 # briefing | draft_pending_confirm | partially_applied | applied | shelved
 previous_id: ""                  # 上一份 POLICY-* 或空
 draft_path: ""                   # 对照的交底定稿路径，可空
+application_draft_path: ""       # 对照的申请产出目录，可空
 sources:
   - id: S1
     track: 审查工具               # 审查工具 | 申请客体 | 程序通识 | 实用新型 | 外观设计
@@ -35,10 +36,17 @@ calendar:
 impacts:
   - id: I1
     depends_on: [S1]
-    topic: 充分公开              # 须能在 topic_prompt_map.md 找到
+    topic: 充分公开              # 须能在 topic_prompt_map.md 交底表找到
     writing_advice: ""           # 对交底写法（不改技能）
     draft_fit: ""                # 对本稿；无稿则「无本稿」
-    map_files: []                # 映射表中的路径，仅说明
+    map_files: []                # 交底表中的路径，仅说明
+application_impacts:
+  - id: A1
+    depends_on: [S1]
+    topic: 权要书式              # 须能在 topic_prompt_map.md 申请表找到；无单独条目可空数组并在简报写一行说明
+    writing_advice: ""           # 对申请文件写法（不改申请包）
+    draft_fit: ""
+    map_files: []                # 申请表中的路径，仅说明
 candidates:
   - id: E1                       # 附录；默认不执行
     affects: 交底
@@ -49,7 +57,7 @@ candidates:
     recommendation: 搁置
 rejects:
   - id: X1
-    affects: 解读                # 解读 | 检索 | 答复 | 司法 | 预审 | 仅背景
+    affects: 解读                # 解读 | 检索 | 答复 | 申请 | 司法 | 预审 | 仅背景
     item: ""
     reason: ""
 ```
@@ -57,11 +65,12 @@ rejects:
 ## 硬性规则
 
 - `sources[].source_url` 必须为可打开的绝对 URL。  
-- 默认 `status: briefing`：只落盘简报，禁止改技能正文。  
-- `impacts[].topic` 须能在 `topic_prompt_map.md` 找到，否则标仅背景、不要编 E*。  
+- 默认 `status: briefing`：只落盘简报，禁止改技能正文（含申请包）。  
+- `impacts[].topic` 须能在 `topic_prompt_map.md` **交底表**找到，否则标仅背景、不要编 E*。  
+- `application_impacts` 必有结构：无单独申请书式影响时简报写一行说明，不要省略第 4 节。  
 - 仅 `evidence_level` 为 A、且非「未施行」的源可支撑附录 `candidates`。B 源不得单独支撑 E*。  
 - `calendar[]` 必填结构：无未施行局令时写一行说明，不要省略本节。  
 - `hard_requirement_for_disclosure` 在施行日未到时必须为 false。  
-- `candidates[].touch_files` 必须带 `skills/patent-disclosure/` 前缀（改技能旁路）。  
-- 「全部采纳」只应用交底包白名单内、且映射表能对上的 E*。  
-- 解读 / 检索 / 审查答复 / 本包 / 根 `SKILL.md` / 司法口径 / 地方预审 放入 `rejects`，除非用户点名该编号且路径写明。
+- `candidates[].touch_files` 必须带 `skills/patent-disclosure/` 前缀（改技能旁路）。**禁止**写入 `skills/patent-application/`。  
+- 「全部采纳」只应用交底包白名单内、且交底表能对上的 E*。  
+- 解读 / 检索 / 审查答复 / 申请程序项 / 本包 / 根 `SKILL.md` / 司法口径 / 地方预审 放入 `rejects`，除非用户点名该编号且路径写明。

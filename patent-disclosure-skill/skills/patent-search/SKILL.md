@@ -1,6 +1,6 @@
 ---
 name: patent-search
-description: "中国专利公布公告著录检索：发明人、申请人、分类号、名称等高级查询字段。"
+description: "中国专利公布公告著录检索：发明人、申请人、分类号、名称、摘要；也可从单图或权利要求生成名称/摘要关键字后查询。"
 user-invocable: false
 ---
 
@@ -8,7 +8,7 @@ user-invocable: false
 
 通用公布站高级查询，不是「个人清单技能」。个人公开清单只是一种用法。
 
-**先 `Read` `prompts/patent_search.md`。**
+**先 `Read` `prompts/patent_search.md`。** 用户给单图或权要时再 `Read` `prompts/derived_query.md`。
 
 ## 默认少翻页
 
@@ -24,9 +24,12 @@ user-invocable: false
 
 ```bash
 python skills/patent-search/tools/cnipa_search.py --inventor "姓名" --applicant "单位"
-python skills/patent-search/tools/cnipa_search.py --title "数据处理" --class B01J20 --max-pages 2
+python skills/patent-search/tools/cnipa_search.py --title "数据处理" --abstract "吸附 and 再生" --class B01J20 --max-pages 2
+python skills/patent-search/tools/cnipa_search.py --abstract "折叠 and 杯盖" --type design --derived-from image --type-inferred --derived-note "折叠杯盖"
 python skills/patent-search/tools/cnipa_search.py --inventor "姓名" --complete
 ```
+
+单图必须 `--type design|utility_model|invention`，不能 `all`。用户没说类型时看图推断并加 `--type-inferred`。权要按文本选类型，可用 `all`。
 
 单独拷走本包时：`python tools/cnipa_search.py …`。
 
@@ -34,7 +37,7 @@ python skills/patent-search/tools/cnipa_search.py --inventor "姓名" --complete
 
 机读前缀：`EPUB_SEARCH_MD:` / `EPUB_SEARCH_JSON:` / `EPUB_SEARCH_NOTE:` / `EPUB_SEARCH_INCOMPLETE:`。对话里告诉用户 Markdown 路径，不要只倒 JSON。
 
-必须走高级查询字段（`#e72` 发明人、`#ti` 名称、`#e51` 分类号等），禁止把发明人姓名填进首页综合框代替。申请号填表前去掉校验点。
+必须走高级查询字段（`#e72` 发明人、`#ti` 名称、`#abs` 摘要/简要说明、`#e51` 分类号等），禁止把发明人姓名填进首页综合框代替。申请号填表前去掉校验点。
 
-**不做**：Google Patents / 学术检索与跨库去重、PSS 登录站、权利要求全文/同族深挖。  
+**不做**：Google Patents / 学术检索与跨库去重、PSS 登录站、权利要求全文/同族深挖、按附图视觉相似检索、按权利要求语义检索。单图/权要只生成公布站布尔式。  
 **禁止**被交底 Step 5 当查新引擎调用。

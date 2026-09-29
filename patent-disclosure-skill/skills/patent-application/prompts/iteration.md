@@ -19,7 +19,7 @@
 
 1. 新建 **`outputs/patent-application/{案件标识}_{YYYYMMDDHHmmss}/`**，不要覆盖旧目录。
 2. 拷贝需保留的 Markdown / YAML / 图，再改本轮涉及的文件。
-3. 动过附图则重跑 `render_invention_figures.py` 或 `compose_application_figure.py`；动过权要则重跑 `audit_claims.py`；交付前跑 `check_support.py`。
+3. 动过附图：发明重跑 `render_invention_figures.py`；实用新型重跑 `compose_application_figure.py`；**外观不改原图、不跑 compose**，不合格只更新 `问题清单.md`。动过权要则重跑 `audit_claims.py`；交付前跑 `check_support.py`（外观可跳过权要/对照脚本）。
 4. `emit_application_docx.py` 出本目录 Word。
 5. 按 `issues.md` 写本目录 `问题清单.md`，对话末尾提醒。
 6. 追加修订记录：

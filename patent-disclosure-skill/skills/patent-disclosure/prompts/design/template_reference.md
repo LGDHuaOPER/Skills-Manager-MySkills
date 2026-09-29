@@ -10,7 +10,7 @@
 
 ## 视图清单示例
 
-原材料路径仅供识图；**交底入文**以 `figure_plan.yaml` 为准。干净实拍与线稿都入文（md + Word）；场景图默认 `use_in_disclosure: false` 或 `role: reference`。CAD 不入文。
+原材料路径仅供识图；**交底入文**以 `figure_plan.yaml` 为准。干净实拍与线稿都入文（md + Word）；场景图默认 `use_in_disclosure: false` 或 `role: reference`。CAD 不入文。图题用官方全称（主视图、后视图、左视图、右视图、俯视图、仰视图、立体图），写在图外，不烧进像素。透视棚拍不得标 `photo_clean`。
 
 | fig | role | 示例 path | kind | 入文？ | relates_to（示意） |
 |-----|------|-----------|------|--------|-------------------|

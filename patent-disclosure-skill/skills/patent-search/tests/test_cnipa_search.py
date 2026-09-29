@@ -44,6 +44,7 @@ SAMPLE_APPLICANT = "宇树科技"  # 申请人简称，测 #e71_73 / 别名包�
 SAMPLE_APPLICANT_LEGAL = "杭州宇树科技有限公司"  # 常见著录全称，测多 --applicant
 SAMPLE_INVENTOR = "王兴兴"  # 发明人/设计人，测 #e72
 SAMPLE_TITLE = "四足机器人"  # 足式平台主题词，测 #ti
+SAMPLE_ABSTRACT = "步行 and 关节"  # 摘要/简要说明主题词，测 #abs
 SAMPLE_TITLE_HUMANOID = "人形机器人"  # 同领域另一名称词
 SAMPLE_CLASS_IPC = "B25J"  # 机械手/操纵器，足式与关节常见
 SAMPLE_CLASS_WALKING = "B62D57"  # 非轮式行走装置
@@ -63,13 +64,22 @@ except ImportError:  # pragma: no cover
 
 from cnipa_crawler import (
     DEFAULT_USER_AGENT,
+    FIELD_SELECTORS,
     _CLICK_NEXT_PAGE_JS,
     _FETCH_RESULT_PAGE_JS,
     advance_to_next_result_page,
     apply_epub_advanced_catalog_filter,
     collect_result_pages,
+    fill_advanced_field,
     has_next_result_page,
     search_advanced,
+)
+from derived_query import (
+    join_and,
+    inferred_type_note,
+    normalize_derived_from,
+    query_mode_for,
+    require_image_patent_type,
 )
 
 
@@ -510,6 +520,8 @@ class QueryFieldsTests(unittest.TestCase):
                 SAMPLE_APPLICANT_LEGAL,
                 "--title",
                 SAMPLE_TITLE,
+                "--abstract",
+                SAMPLE_ABSTRACT,
                 "--class",
                 SAMPLE_CLASS_IPC,
                 "--application-number",
@@ -529,6 +541,7 @@ class QueryFieldsTests(unittest.TestCase):
                 "inventor": SAMPLE_INVENTOR,
                 "applicant": SAMPLE_APPLICANT,
                 "title": SAMPLE_TITLE,
+                "abstract": SAMPLE_ABSTRACT,
                 "class_code": SAMPLE_CLASS_IPC,
                 "application_number": application_number_for_epub_query(
                     SAMPLE_APPLICATION_NUMBER
@@ -542,6 +555,54 @@ class QueryFieldsTests(unittest.TestCase):
     def test_blank_query_is_rejected(self) -> None:
         self.assertEqual(_query_fields(_build_parser().parse_args([])), {})
         self.assertEqual(main([]), 2)
+
+    def test_derived_from_requires_title_or_abstract(self) -> None:
+        self.assertEqual(main(["--class", SAMPLE_CLASS_IPC, "--derived-from", "image"]), 2)
+        self.assertEqual(main(["--abstract", SAMPLE_ABSTRACT, "--derived-from", "nope"]), 2)
+
+    def test_image_search_rejects_type_all(self) -> None:
+        self.assertEqual(
+            main(["--abstract", SAMPLE_ABSTRACT, "--derived-from", "image"]),
+            2,
+        )
+        self.assertEqual(
+            main(
+                [
+                    "--abstract",
+                    SAMPLE_ABSTRACT,
+                    "--derived-from",
+                    "image",
+                    "--type",
+                    "all",
+                ]
+            ),
+            2,
+        )
+        with self.assertRaises(ValueError):
+            require_image_patent_type("image", "all")
+        require_image_patent_type("image", SAMPLE_TYPE_DESIGN)
+        require_image_patent_type("claims", "all")
+        self.assertIn("按产品外观检索", inferred_type_note("design"))
+
+    def test_derived_from_aliases(self) -> None:
+        self.assertEqual(normalize_derived_from("单图"), "image")
+        self.assertEqual(normalize_derived_from("权利要求"), "claims")
+        self.assertEqual(query_mode_for("image"), "derived_image")
+        self.assertEqual(join_and(["折叠", "and", "杯盖", "折叠"]), "折叠 and 杯盖")
+
+
+class AbstractFieldTests(unittest.TestCase):
+    def test_selectors_include_ab(self) -> None:
+        self.assertIn("#abs", FIELD_SELECTORS["abstract"])
+        self.assertEqual(FIELD_SELECTORS["abstract"][0], "#abs")
+
+    def test_fill_uses_abs_before_label_fallback(self) -> None:
+        page = MagicMock()
+        box = MagicMock()
+        page.query_selector.side_effect = lambda selector: box if selector == "#abs" else None
+        self.assertTrue(fill_advanced_field(page, "abstract", SAMPLE_ABSTRACT))
+        page.fill.assert_called_once_with("#abs", SAMPLE_ABSTRACT)
+        page.evaluate.assert_not_called()
 
 
 class LiveCnipaSearchTests(unittest.TestCase):
@@ -575,6 +636,12 @@ class LiveCnipaSearchTests(unittest.TestCase):
         self._assert_has_hits(
             self._search({"title": SAMPLE_TITLE}),
             {"title": SAMPLE_TITLE},
+        )
+
+    def test_live_abstract(self) -> None:
+        self._assert_has_hits(
+            self._search({"abstract": SAMPLE_ABSTRACT}),
+            {"abstract": SAMPLE_ABSTRACT},
         )
 
     def test_live_class(self) -> None:

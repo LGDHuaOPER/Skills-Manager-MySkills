@@ -15,5 +15,5 @@ figures:
   - fig: 1               # 与 figure_plan 或交底「如图 N」一致
     title: ""            # 附图说明用的一句
     kind: lineart        # lineart | mermaid | source_image | photo_clean | other
-    disclosure_only: false  # true=仍是交底原图，未升格为申请附图
+    disclosure_only: false  # true=仍是交底原图。外观一律 true（不升格）
 ```

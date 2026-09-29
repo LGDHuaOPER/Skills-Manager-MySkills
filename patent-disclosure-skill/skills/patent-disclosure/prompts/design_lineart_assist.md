@@ -1,6 +1,7 @@
 # 外观线稿（成文前必做）
 
 **公共合同先读**：`prompts/image_gen.md`（线稿只有两条路；CAD 不得当线稿、不得入文）  
+**视图口径**：`references/design_view_cnipa.md`（审查指南 4.2；与申请文件同一清单）  
 **本文件合同**：`references/schemas/design_lineart_brief.schema.yaml`  
 **前置**：已有或本轮将写出的 `appearance_schema.yaml` + `figure_plan.yaml`（见 `fill_appearance_schema.md`）  
 **性质**：交底入文线稿。途经 1 用材料里已有合格线稿；途经 2 由大模型生成（图生图优先，否则先描述再文生图）。  
@@ -40,7 +41,8 @@ python skills/patent-disclosure/tools/image_gen.py --case-dir "outputs/{案件�
    - 途经 2 且有参考图：每个 `views[]` 填存在的 `source_paths`（CAD/实拍均可作参考；实拍另条入文，CAD 不入文）  
    - 途经 2 且无参考图：`source_paths` 可空  
    - `source_figs` / `relates_hint` 抄自 figure_plan  
-   - `gen_prompt`：黑白外观轮廓线稿、无彩色无棚拍阴影、不发明未见结构、保留可见轮廓与开口/倒角；**禁止**尺寸线、中心线、定位线、件号引出线、工程剖面阴影；有参考则「以参考图为准」
+   - `view_name` / 图题用官方全称（主视图、后视图、左视图、右视图、俯视图、仰视图、立体图）  
+   - `gen_prompt`：黑白外观轮廓线稿、正投影（立体图除外）、各视比例一致、无彩色无棚拍阴影、不发明未见结构、保留可见轮廓与开口/倒角；**禁止**尺寸线、中心线、定位线、件号引出线、工程剖面阴影、图内图号/视图名；画布对准不超过 150mm×220mm、72–300 DPI；有参考则「以参考图为准」
 
 ### 2. 门禁
 
@@ -94,10 +96,10 @@ python skills/patent-disclosure/tools/design_lineart_gate.py \
 
 ### 5. 成文纪律
 
-- 正文「见图 N」引用实拍与线稿；**Markdown 与同名 Word 都要嵌这两组图**（`md_to_docx.py`）。交底对照 ≠ 申请必须六视。  
-- **禁止**把 CAD 投影或实拍写成线稿。  
-- **禁止**把线稿写成「已按国知局规范绘制的正式视图」。  
-- **禁止**线稿上画尺寸线、中心线、定位线、件号引出线。  
+- 正文「见图 N」引用实拍与线稿；**Markdown 与同名 Word 都要嵌这两组图**（`md_to_docx.py`）。图题用官方视图名，标在图下方，不写入图片像素。按要点落面出图，**不要**默认补六视。  
+- 线稿按 `design_view_cnipa.md` 一次画到规格；未过清单须重画，不得把草稿留给申请文件加工。  
+- **禁止**把 CAD 投影或实拍写成线稿。透视棚拍不得当合格正投影实拍。  
+- **禁止**线稿上画尺寸线、中心线、定位线、件号引出线、图号。  
 - `uncertain` 中的特征不得画死成设计要点。
 
 ## 自检（内部）
@@ -107,4 +109,5 @@ python skills/patent-disclosure/tools/design_lineart_gate.py \
 - [ ] 否则已图生图，或已「先描述再文生图」/ 文生图  
 - [ ] 干净实拍与线稿均为 `use_in_disclosure: true`；md 与 docx 都已嵌入  
 - [ ] 多视参照了 `relates_to` / `relates_hint`；线稿视与 `claimed_faces` 一致，未为省略面出图  
-- [ ] 线稿无尺寸线 / 中心线 / 定位线 / 件号引出线  
+- [ ] 线稿无尺寸线 / 中心线 / 定位线 / 件号引出线 / 图内图号；图题为官方视图名  
+- [ ] 已按 `design_view_cnipa.md` 复核；未过清单的已有线稿已重画，未走 `existing_lineart`  

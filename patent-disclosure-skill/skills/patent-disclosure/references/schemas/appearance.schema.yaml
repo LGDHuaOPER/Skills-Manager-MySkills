@@ -10,12 +10,12 @@ source_images: []          # 看过的图；入文以 figure_plan 为准
 product_name: ""
 overall_shape: ""      # 整体造型一句话
 product_form: solid    # solid 立体产品 | planar 平面产品；先判此项再选正投影
-claimed_faces: []      # 设计要点落面。立体：主视/后视/左视/右视/俯视/仰视；平面：正面/背面
+claimed_faces: []      # 设计要点落面。立体：主视图/后视图/左视图/右视图/俯视图/仰视图；平面：正面/背面
 omitted_views:         # 故意不交的正投影（相同/对称/无要点），供简要说明；不是缺材料
-  - name: ""           # 如 仰视
+  - name: ""           # 如 仰视图
     reason: ""         # 如 底面无设计要点
 views:                 # 已见且拟用的视图（含立体图）；勿为 omitted 面凑条目
-  - name: 立体图       # 主视/俯视/左视/立体等
+  - name: 立体图       # 主视图/俯视图/左视图/立体图 等官方全称
     notes: ""
     source_image: ""   # 可选；对应材料图路径
     # 视图间关联优先写在 figure_plan.relates_to（same_state / alternate_view）
@@ -27,7 +27,7 @@ uncertain: []          # 材料看不清，或要点落面缺少可用源图（�
 not_design_signals: [] # 若更像结构功能/方法，列于此
 ```
 
-## 正投影怎么定（交底选图；非正式申请包）
+## 正投影怎么定（审查指南 4.2；交底出图即按此清单）
 
 1. 先判 `product_form`。  
 2. 按 `design_points` 列出 `claimed_faces`。  

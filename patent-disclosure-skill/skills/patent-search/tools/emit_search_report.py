@@ -30,12 +30,28 @@ _QUERY_LABELS = {
     "applicant": "申请人",
     "applicants": "申请人别名",
     "title": "名称",
+    "abstract": "摘要/简要说明",
     "class_code": "分类号",
     "application_number": "申请号",
     "publication_number": "公开号/公告号",
     "patent_type": "专利类型",
+    "type_inferred": "类型来源",
+    "type_note": "类型说明",
     "max_pages": "预排翻页上限",
     "want_complete": "穷举（--complete）",
+    "derived_from": "派生自",
+    "derived_note": "理解要点",
+}
+
+_QUERY_MODE_LABELS = {
+    "advanced_bibliographic": "著录字段",
+    "derived_image": "单图关键字代理",
+    "derived_claims": "权要关键字代理",
+}
+
+_DERIVED_FROM_LABELS = {
+    "image": "单图",
+    "claims": "权利要求",
 }
 
 _TYPE_LABELS = {
@@ -97,6 +113,13 @@ def _link(title: Any, url: Any) -> str:
 def _format_query_value(key: str, value: Any) -> str:
     if key == "patent_type":
         return _TYPE_LABELS.get(str(value), _text(value))
+    if key == "derived_from":
+        return _DERIVED_FROM_LABELS.get(str(value), _text(value))
+    if key == "type_inferred":
+        if value is True:
+            return "看图推断（用户未口头指定）"
+        if value is False:
+            return ""
     return _text(value)
 
 
@@ -126,6 +149,7 @@ def render_search_report(
         f"- **查询时间**：{stamp}",
         f"- **数据源**：{_text(payload.get('source'), empty='http://epub.cnipa.gov.cn/Advanced')}",
         f"- **范围**：仅已公开/公告记录，不得写成实际提交总数",
+        f"- **检索方式**：{_QUERY_MODE_LABELS.get(str(payload.get('query_mode') or ''), _text(payload.get('query_mode'), empty='著录字段'))}",
         f"- **命中**：候选 { _text(payload.get('candidate_count'), empty='0') } 条，过滤后 { _text(payload.get('matched_count'), empty='0') } 件"
         f"（公布/授权记录 { _text(payload.get('matched_publication_count'), empty='0') } 条）",
         f"- **完整性**：{_text(payload.get('complete'))}；{note or _text(payload.get('stop_reason'))}",
@@ -141,10 +165,15 @@ def render_search_report(
         "applicant",
         "applicants",
         "title",
+        "abstract",
         "class_code",
         "application_number",
         "publication_number",
         "patent_type",
+        "type_inferred",
+        "type_note",
+        "derived_from",
+        "derived_note",
         "max_pages",
         "want_complete",
     ):
@@ -153,6 +182,8 @@ def render_search_report(
         value = query[key]
         if key == "applicant" and query.get("applicants"):
             continue
+        if key == "type_inferred" and not value:
+            continue
         if value in (None, "", [], ()):
             continue
         seen.add(key)
@@ -160,7 +191,17 @@ def render_search_report(
     for key, value in query.items():
         if key in seen or value in (None, "", [], ()):
             continue
+        if key == "type_inferred" and not value:
+            continue
         lines.append(f"| {_QUERY_LABELS.get(key, key)} | {_md_escape(_format_query_value(key, value))} |")
+
+    disclaimer = str(payload.get("disclaimer") or "").strip()
+    if not disclaimer and str(payload.get("query_mode") or "").startswith("derived"):
+        from derived_query import DISCLAIMER as _DERIVED_DISCLAIMER
+
+        disclaimer = _DERIVED_DISCLAIMER
+    if disclaimer:
+        lines.extend(["", f"> {disclaimer}"])
 
     lines.extend(
         [

@@ -40,8 +40,8 @@
 
 1. 产品名称（交底文头）  
 2. AppearanceSchema 定稿路径  
-3. **`figure_plan.yaml`**（入文视图清单；先 `product_form` 再按 `claimed_faces` 定正投影，立体宜加立体图，**非默认六视**；支撑要点的多视 `relates_to` 已写；场景图默认不入文除非明确启用）
+3. **`figure_plan.yaml`**（入文视图清单；先 `product_form` 再按 `claimed_faces` 定正投影，立体宜加立体图，**非默认六视**；`covers` / 图题用官方全称；支撑要点的多视 `relates_to` 已写；场景图默认不入文除非明确启用）
 
-成文前必做：`prompts/image_gen.md` + `prompts/design_lineart_assist.md`（不问用户；已有合格线稿则入文，否则图生图或文生图）。干净实拍与线稿都写入 md 与 Word；CAD/实拍不得标成线稿。
+成文前必做：`references/design_view_cnipa.md` + `prompts/image_gen.md` + `prompts/design_lineart_assist.md`（不问用户；已有线稿须过 4.2 才入文，否则重画）。干净实拍与线稿都写入 md 与 Word；CAD/实拍不得标成线稿；透视棚拍不得当合格正投影。
 
 下一步：**`Read`** 同目录 `disclosure_builder.md` + `template_reference.md`；查新 **`--type design`**。

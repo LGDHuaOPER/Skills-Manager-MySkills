@@ -22,7 +22,7 @@
 
 1. 先判再收图（**勿默认六视**）  
    - 判 `product_form`：`solid` 立体产品 / `planar` 平面产品。  
-   - 按设计要点列出 `claimed_faces`，正投影 = 要点落面；立体宜加立体图。**仅要点涉及六个面**才收齐六面正投影。平面产品一面或两面即可。  
+   - 按设计要点列出 `claimed_faces`（官方全称：主视图、后视图、左视图、右视图、俯视图、仰视图；平面：正面/背面），正投影 = 要点落面；立体宜加立体图。**仅要点涉及六个面**才收齐六面正投影。平面产品一面或两面即可。主视图取朝向消费者或最能反映整体的一面。  
    - 相同、对称或无要点的面写入 `omitted_views`（供简要说明），不为这些面凑图。  
    - 再收集已有正投影 / 立体图 / 效果图 / 专利视图。成文前即使有 STEP 也不投影。仅当用户已在**交底落盘后**确认开启（或成文前主动要求）：可用 `run_step_to_views.py` 自动投影作视图材料（外观仍以可见造型为准；场景图规则不变）。  
 2. **跨图联读**：多视视为同一产品；比例、开口、装饰位置须一致；矛盾写入 `uncertain`  
@@ -32,11 +32,11 @@
    - `covers` 对齐 `views.name` 或设计要点短标签；`figure_plan` 正交条只覆盖 `claimed_faces`，勿为 `omitted_views` 分配入文 `fig`  
    - 多视之间可用 `relates_to`：`same_state` / `alternate_view`；局部造型用 `detail_of` 指向立体/主视  
    - `views[].source_image` 可选，指向材料路径  
-   - 每张图写 `kind` + `relevance` + `quality` + `score`（见 `image_gen.md`）  
-   - **入文须同时选**：合格/生成的 `lineart` **和** 干净实拍 `photo_clean`（md 与 Word 都嵌；交底对照用，不表示申请必须六视）。CAD 禁止入文；`photo_scene` 默认不入  
-   - 要点落面缺源图 → `uncertain`；故意不交的面只写 `omitted_views`，禁止写成「缺正式六视」  
+   - 每张图写 `kind` + `relevance` + `quality` + `score`（见 `image_gen.md`；外观另按 `references/design_view_cnipa.md`，未过 4.2 则 quality≤69）  
+   - **入文须同时选**：合格/生成的 `lineart` **和** 干净实拍 `photo_clean`（md 与 Word 都嵌）。CAD 禁止入文；`photo_scene` 默认不入。`covers` / 图题用官方全称（主视图、后视图…、立体图）  
+   - 要点落面缺源图 → `uncertain`；故意不交的面只写 `omitted_views`，禁止默补六视  
    - `theme_summary` = 当前产品外观主题；`patent_type: design`；`mode: disclosure`  
-5. **外观线稿（必做）**：**`Read`** `prompts/image_gen.md`，再 **`Read`** `prompts/design_lineart_assist.md`。不问用户。先 `image_gen.py`：已有合格线稿则入文；否则图生图或文生图。实拍仍入文，只是不当线稿。CAD 投影不是线稿、不入文。仅 `PATENT_SKILL_SKIP_LINEART=1` 或用户明确不要线稿才跳过。  
+5. **外观线稿（必做）**：**`Read`** `references/design_view_cnipa.md`，再 **`Read`** `prompts/image_gen.md` 与 `prompts/design_lineart_assist.md`。不问用户。先 `image_gen.py`：已有线稿须过 4.2 清单才入文，否则重画。实拍仍入文，只是不当线稿；透视棚拍不得当合格正投影。CAD 投影不是线稿、不入文。仅 `PATENT_SKILL_SKIP_LINEART=1` 或用户明确不要线稿才跳过。  
 6. 区分「整体造型」与「装饰图案/色彩」；`uncertain` 单独列出
 
 ## 多轮

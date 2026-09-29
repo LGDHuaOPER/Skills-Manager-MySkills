@@ -22,12 +22,19 @@ from emit_search_report import (
 def _sample_payload() -> dict:
     return {
         "source": "http://epub.cnipa.gov.cn/Advanced",
+        "query_mode": "derived_image",
+        "disclaimer": "本检索由图片或权利要求生成公布站「名称 / 摘要」关键字后查询，不是以图搜图，也不是权利要求语义检索；漏检可能较高，不得作为查新或 FTO 结论。",
         "queried_at": "2026-09-02 11:58:00",
         "query": {
             "inventor": "测试发明人",
             "applicants": ["示例研究院"],
             "title": "数据处理",
+            "abstract": "吸附 and 再生",
             "patent_type": "invention",
+            "derived_from": "image",
+            "derived_note": "折叠吸附装置示意",
+            "type_inferred": True,
+            "type_note": "未指定类型，按产品外观检索；若要查结构请说实用新型",
             "max_pages": 3,
             "want_complete": False,
         },
@@ -77,6 +84,12 @@ class EmitSearchReportTests(unittest.TestCase):
         self.assertIn("查询时间**：2026-09-02 11:58:00", text)
         self.assertIn("| 发明人 | 测试发明人 |", text)
         self.assertIn("| 名称 | 数据处理 |", text)
+        self.assertIn("| 摘要/简要说明 | 吸附 and 再生 |", text)
+        self.assertIn("| 派生自 | 单图 |", text)
+        self.assertIn("看图推断（用户未口头指定）", text)
+        self.assertIn("未指定类型，按产品外观检索", text)
+        self.assertIn("单图关键字代理", text)
+        self.assertIn("不是以图搜图", text)
         self.assertIn("[一种示例数据处理方法](http://epub.cnipa.gov.cn/patent/CN120000001A)", text)
         self.assertIn("本发明提供一种示例数据处理方法。", text)
         self.assertIn("已由官方发明人著录核实", text)

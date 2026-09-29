@@ -18,7 +18,8 @@
 
 可跳过；跳过则默认：**全部范围 + 近 12 个月**，以中国国知局为主。  
 默认「全部」必须覆盖实用新型明显创造性、局部外观 / GUI / 相似外观、实施细则，并做施行日历（已公布未施行单独成表）。  
-若工作区已有交底定稿（`outputs/` 下带时间戳的 `.md`），简报须尝试对照本稿，不必再问。
+若工作区已有交底定稿（`outputs/` 下带时间戳的 `.md`），简报第 3 节须尝试对照本稿，不必再问。  
+若工作区已有申请产出（`outputs/patent-application/`），第 4 节须尝试对照，不必再问。
 
 ## 输出约定
 
@@ -30,5 +31,5 @@
 ## 下一步
 
 1. **`Read`** `skills/patent-exam-policy/prompts/research.md` → A/B 分层种子、增量、施行日历、抓取  
-2. **`Read`** `skills/patent-exam-policy/prompts/emit_backlog.md` → 写简报（含施行日历）  
-3. 展示简报结束话术（见 guardrails）；**不要**把「全部采纳」当成默认下一步
+2. **`Read`** `skills/patent-exam-policy/prompts/emit_backlog.md` → 写简报（含施行日历、对交底写法、对申请文件写法）  
+3. 展示 **`## 交付后请确认`**（见 guardrails）；**不要**把「全部采纳」当成默认下一步

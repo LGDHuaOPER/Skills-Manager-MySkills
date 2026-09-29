@@ -1,6 +1,6 @@
 # 申请文件 · 附图
 
-交底 mermaid / 彩色 PNG **只当结构来源**。申请附图须黑白线框。图号写在说明书「附图说明」和插图下方的正文，**不要**画进 PNG/SVG。PNG 按 SVG 内容包围盒截取，不要整页 A4 留白。不要用交底包 `structure_lineart_compose`。
+发明 / 实用新型：交底 mermaid / 彩色 PNG **只当结构来源**。申请附图须黑白线框。图号写在说明书「附图说明」和插图下方的正文，**不要**画进 PNG/SVG。PNG 按 SVG 内容包围盒截取，不要整页 A4 留白。不要用交底包 `structure_lineart_compose`。外观见文末「外观」节，不走黑白升格。
 
 ## 发明
 
@@ -36,6 +36,11 @@ python skills/patent-application/tools/compose_application_figure.py \
 ```
 
 要求：黑白、按内容裁切、图号只在正文；件号与 `structure_schema.parts` / 权要同一张表（交底 overlay 已有件号则保留，不要另编）。CAD、实拍不升格入申请附图。
+
+## 外观
+
+外观**不走**本节升格。见 `prompts/design_application.md` 与 `references/design_view_cnipa.md`。  
+禁止对本案跑 `compose_application_figure.py`。交底入文图原样复制到产出 `figures/`；不合格只写入问题清单。
 
 ## 步骤（发明）
 
