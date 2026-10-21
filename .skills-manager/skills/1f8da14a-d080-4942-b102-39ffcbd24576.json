@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "skill_id": "1f8da14a-d080-4942-b102-39ffcbd24576",
+  "path": "knap",
+  "path_key": "knap",
+  "enabled": true,
+  "tags": [
+    "Editor",
+    "Editor/Obsidian"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "kepano/obsidian-skills/knap",
+    "subpath": "skills\\knap",
+    "branch": null
+  }
+}
