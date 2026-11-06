@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "skill_id": "241661fd-ac20-47ed-9fa5-7a2f72327ffc",
+  "path": "markitdown",
+  "path_key": "markitdown",
+  "enabled": true,
+  "tags": [
+    "LLM-Wiki"
+  ],
+  "source": {
+    "type": "skillssh",
+    "ref": "julianobarbosa/claude-code-skills/markitdown",
+    "subpath": "skills\\markitdown",
+    "branch": null
+  }
+}

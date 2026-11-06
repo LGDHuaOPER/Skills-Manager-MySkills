@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "e42434b2-edec-46dd-a941-ce3294073a32",
+  "name": "LLM-Wiki",
+  "description": null,
+  "icon": "notebook-pen",
+  "sort_order": 999
+}
